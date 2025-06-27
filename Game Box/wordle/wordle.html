@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wordle</title>
-  <link rel="icon" type="image/png" href="/img/wordel.jpeg">
+  <link rel="icon" type="image/png" href="img/wordel.jpeg">
   <link rel="stylesheet" href="wordle.css">
 </head>
 
@@ -13,130 +12,112 @@
   <div class="back_arrow">
     <a href="../game_index.html">
       <div class="back_arrow_content">
-        <div>
-          <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
-        </div>
-        <div>
-          <p>Back</p>
-        </div>
+        <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
+        <p>Back</p>
       </div>
     </a>
   </div>
+
+  <div class="instructions">
+    <h2>📝 How to Play</h2>
+    <ul>
+      <li>Guess the <strong>5-letter word</strong> in 6 tries.</li>
+      <li>Each guess must be a valid word.</li>
+      <li>Color hints after each guess:</li>
+      <li><span class="green-box"></span> = correct letter & correct position</li>
+      <li><span class="yellow-box"></span> = correct letter, wrong position</li>
+      <li><span class="grey-box"></span> = letter not in the word</li>
+    </ul>
+  </div>
+
   <div class="game_content">
-    <div class="game_content_in" id="wordleGrid">
-    </div>
+    <div class="game_content_in" id="wordleGrid"></div>
+
     <div class="game_below">
       <input type="text" id="guessInput" maxlength="5" placeholder="Enter 5-letter word" autocomplete="off">
       <button class="btn" onclick="submitGuess()">Submit</button>
-      <p id="message" style="color:white; font-size: 20px; margin-top: 10px;"></p>
+      <p id="message"></p>
     </div>
   </div>
 
-</body>
+  <script>
+    const words = ["apple", "train", "bread", "chair", "light", "table", "plant", "grape", "crane", "sweet"];
+    const targetWord = words[Math.floor(Math.random() * words.length)];
+    const maxAttempts = 6;
+    let currentAttempt = 0;
 
-</html>
+    const grid = document.getElementById("wordleGrid");
+    const message = document.getElementById("message");
 
-<script>
-  const words=["apple", "train", "bread", "chair", "light", "table", "plant", "grape", "crane", "sweet"];
-  
-  const targetWord = words[Math.floor(Math.random()*words.length)].toLowerCase();
-  const maxAttempts=6;
-  let currentAttempt=0;
-
-  const grid = document.getElementById("wordleGrid");
-  const message = document.getElementById("message");
-
-  // Create empty grid
-  for (let i = 0; i<maxAttempts; i++) 
-  {
-    const row = document.createElement("div");
-    row.className = "word-row";
-    for (let j = 0; j < 5; j++) {
-      const cell = document.createElement("div");
-      cell.className = "letter-box";
-      row.appendChild(cell);
-    }
-    grid.appendChild(row);
-  }
-
-  function submitGuess() {
-    const input = document.getElementById("guessInput");
-    const guess = input.value.toLowerCase();
-    input.value = "";
-
-    if (guess.length !== 5) {
-      message.textContent = "Please enter a 5-letter word.";
-      return;
-    }
-
-    if (currentAttempt >= maxAttempts) {
-      message.textContent = "No more attempts! The word was: " + targetWord;
-      return;
-    }
-
-    const row = grid.children[currentAttempt];
-    const letterCount = {};
-
-    // Count letters in target word
-    for (let ch of targetWord) {
-      letterCount[ch] = (letterCount[ch] || 0) + 1;
-    }
-
-    // First pass: check correct position
-    for (let i = 0; i < 5; i++) {
-      const box = row.children[i];
-      box.textContent = guess[i];
-      if (guess[i] === targetWord[i]) {
-        box.style.backgroundColor = "#66bb6a"; // green
-        letterCount[guess[i]]--;
+    for (let i = 0; i < maxAttempts; i++) {
+      const row = document.createElement("div");
+      row.className = "word-row";
+      for (let j = 0; j < 5; j++) {
+        const cell = document.createElement("div");
+        cell.className = "letter-box";
+        row.appendChild(cell);
       }
+      grid.appendChild(row);
     }
 
-    // Second pass: check for correct letters in wrong position
-    for (let i = 0; i < 5; i++) {
-      const box = row.children[i];
-      if (box.style.backgroundColor === "") {
-        if (targetWord.includes(guess[i]) && letterCount[guess[i]] > 0) {
-          box.style.backgroundColor = "#fdd835"; // yellow
+    function submitGuess() {
+      const input = document.getElementById("guessInput");
+      const guess = input.value.toLowerCase();
+      input.value = "";
+
+      if (guess.length !== 5) {
+        message.textContent = "⚠️ Please enter a 5-letter word.";
+        return;
+      }
+
+      if (currentAttempt >= maxAttempts) {
+        message.textContent = "❌ No more attempts! The word was: " + targetWord;
+        return;
+      }
+
+      const row = grid.children[currentAttempt];
+      const letterCount = {};
+
+      for (let ch of targetWord) {
+        letterCount[ch] = (letterCount[ch] || 0) + 1;
+      }
+
+      for (let i = 0; i < 5; i++) {
+        const box = row.children[i];
+        box.textContent = guess[i];
+        if (guess[i] === targetWord[i]) {
+          box.style.backgroundColor = "#66bb6a"; // green
           letterCount[guess[i]]--;
-        } else {
-          box.style.backgroundColor = "#9e9e9e"; // grey
         }
       }
+
+      for (let i = 0; i < 5; i++) {
+        const box = row.children[i];
+        if (box.style.backgroundColor === "") {
+          if (targetWord.includes(guess[i]) && letterCount[guess[i]] > 0) {
+            box.style.backgroundColor = "#fdd835"; // yellow
+            letterCount[guess[i]]--;
+          } else {
+            box.style.backgroundColor = "#9e9e9e"; // grey
+          }
+        }
+      }
+
+      currentAttempt++;
+
+      if (guess === targetWord) {
+        message.textContent = "🎉 Correct! You guessed the word!";
+      } else if (currentAttempt === maxAttempts) {
+        message.textContent = "❌ Out of attempts! The word was: " + targetWord;
+      } else {
+        message.textContent = "";
+      }
     }
 
-    currentAttempt++;
-
-    if (guess === targetWord) {
-      message.textContent = "🎉 Correct! You guessed the word!";
-    } else if (currentAttempt === maxAttempts) {
-      message.textContent = "❌ Out of attempts! The word was: " + targetWord;
-    } else {
-      message.textContent = "";
-    }
-  }
-</script>
-
-
-<script>
-  // Select all game links
-  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
-
-  gameLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault(); // stop immediate jump
-
-      // Add fade-out class to body
-      document.body.classList.add('fade-out');
-
-      // Wait for animation to complete (500ms) then redirect
-      setTimeout(() => {
-        window.location.href = this.href;
-      }, 500);
+    // Smooth load animation
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
     });
-  });
-
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
+  </script>
+</body>
+</html>

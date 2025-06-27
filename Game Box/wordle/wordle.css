@@ -1,187 +1,187 @@
-*{
-    margin: 0%;
-    padding: 0%;
-}
-body{
-background: linear-gradient(135deg, #2b5876, #4e4376); 
-font-family: 'Open Sans', sans-serif;
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
-opacity: 0;
-transition: opacity 0.5s ease;
-}
-body.loaded {
-  opacity: 1;
-}
-a{
-  color: white;
-  font-weight: 800;
-  margin: 10px;
-  text-decoration: none;
-}
-.fade-out {
-  animation: fadeOut 0.5s forwards;
-}
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-.opt_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 86vh;
-  color: white;
-  text-align: center;
-  font-size: 30px;
-}
-.opt{
-    display: flex;
-    margin-top: 20px;
-}
-.opt_in{
-    color: black;
-    background-color: white;
-    border-radius: 3cap;
-    margin: 10px;
-    padding: 20px;
-}
-.btn {
-  background-color: #5c6bc0;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background-color: #3949ab;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.back_arrow{
-  background-color: #5c6bc0;
-  color: white;
-  width: 110px;
-  height: 50px;
-  margin: 20px 20px;
-  border-radius: 3cap;
-  display: flex;
-  align-items: center;
-  padding: 3px;
-}
-.back_arrow_content{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #fff;
+    body {
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
 
-}
-.back_arrow_in{
-  width: 50px;
-}
+    body.loaded {
+      opacity: 1;
+    }
 
-.game_content_in{
-  margin-top: -60px;
-}
+    .back_arrow {
+      background-color: #5c6bc0;
+      color: white;
+      width: 110px;
+      height: 50px;
+      margin: 20px;
+      border-radius: 3cap;
+      display: flex;
+      align-items: center;
+      padding: 3px;
+    }
 
-.word-row {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
+    .back_arrow_content {
+      display: flex;
+      align-items: center;
+      color: white;
+    }
 
-.letter-box {
-  width: 60px;
-  height: 60px;
-  margin: 5px;
-  border: 2px solid white;
-  font-size: 2em;
-  text-align: center;
-  line-height: 60px;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  background-color: transparent;
-}
+    .back_arrow_in {
+      width: 50px;
+    }
 
-#guessInput {
-  width: 260px;
-  padding: 10px;
-  font-size: 1.2em;
-  margin-top: 20px;
-  border-radius: 10px;
-  border: none;
-  text-transform: uppercase;
-  text-align: center;
-}
-.game_below{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.game_below .btn{
-  margin-top: 30px;
-}
+    a {
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+    }
 
-@media (min-width: 300px) and (max-width: 500px) {
-  .letter-box {
-    width: 45px;
-    height: 45px;
-    font-size: 1.5em;
-    line-height: 45px;
-    margin: 4px;
-  }
+    .game_content {
+      text-align: center;
+      margin: 10px 20px;
+    }
 
-  #guessInput {
-    width: 80%;
-    font-size: 1em;
-    padding: 8px;
-  }
+    .instructions {
+      color: white;
+      padding: 20px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
 
-  .btn {
-    padding: 8px 16px;
-    font-size: 1em;
-  }
+    .instructions ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-  .back_arrow {
-    width: 90px;
-    height: 40px;
-    margin: 10px;
-  }
+    .instructions li {
+      margin: 5px 0;
+      font-size: 18px;
+    }
 
-  .back_arrow_in {
-    width: 35px;
-  }
+    .green-box,
+    .yellow-box,
+    .grey-box {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
 
-  .back_arrow_content p {
-    font-size: 14px;
-  }
+    .green-box { background-color: #66bb6a; }
+    .yellow-box { background-color: #fdd835; }
+    .grey-box { background-color: #9e9e9e; }
 
-  .opt_content {
-    font-size: 22px;
-    padding: 10px;
-  }
+    .game_content_in {
+      margin-top: 20px;
+    }
 
-  .opt_in {
-    padding: 15px;
-    font-size: 16px;
-  }
+    .word-row {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
 
-  .word-row {
-    margin: 8px 0;
-  }
+    .letter-box {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+      border: 2px solid white;
+      font-size: 2em;
+      text-align: center;
+      line-height: 60px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      background-color: transparent;
+    }
 
-  .game_below .btn {
-    margin-top: 20px;
-  }
-  .game_content_in{
-  margin-top: 40px;
-  }
+    #guessInput {
+      width: 260px;
+      padding: 10px;
+      font-size: 1.2em;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: none;
+      text-transform: uppercase;
+      text-align: center;
+    }
 
-}
+    .btn {
+      background-color: #5c6bc0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #3949ab;
+    }
+
+    .game_below {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    @media (min-width: 300px) and (max-width: 500px) {
+      .letter-box {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5em;
+        line-height: 45px;
+        margin: 4px;
+      }
+
+      #guessInput {
+        width: 80%;
+        font-size: 1em;
+        padding: 8px;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        font-size: 1em;
+      }
+
+      .back_arrow {
+        width: 90px;
+        height: 40px;
+        margin: 10px;
+      }
+
+      .back_arrow_in {
+        width: 35px;
+      }
+
+      .back_arrow_content p {
+        font-size: 14px;
+      }
+
+      .instructions li {
+        font-size: 16px;
+      }
+    }

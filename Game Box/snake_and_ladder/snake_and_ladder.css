@@ -223,5 +223,10 @@ td{
   .game_content {
     padding: 10px;
   }
+  
+  .opt{
+    display: flex;
+    flex-direction: column;
+}
 }
 

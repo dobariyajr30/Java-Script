@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 150%;">
+    <h1>~Text Box With Text Box~</h1>
+    <br><br>
+    Collage:= <input type="checkbox" name="" id="opt1">
+    Director:=<input type="checkbox" name="" id="opt2">
+    HoD:=<input type="checkbox" name="" id="opt3">
+    Student:=<input type="checkbox" name="" id="opt4">
+    <br><br>
+    <span id="spn1"></span>
+    <span id="spn2"></span>
+    <span id="spn3"></span>
+    <span id="spn4"></span>
+</body>
+</html>
+<script>
+    let opt1=document.querySelector("#opt1");
+    let opt2=document.querySelector("#opt2");
+    let opt3=document.querySelector("#opt3");
+    let opt4=document.querySelector("#opt4");
+    let spn1=document.querySelector("#spn1");
+    let spn2=document.querySelector("#spn2");
+    let spn3=document.querySelector("#spn3");
+    let spn4=document.querySelector("#spn4");
+
+    opt1.addEventListener("click",()=>
+    {
+        if(opt1.checked)
+        {
+            spn1.innerHTML="Collage  ";
+        }
+        else
+        {
+            spn1.innerHTML="";  
+        }
+    })
+    opt2.addEventListener("click",()=>
+    {
+        if(opt2.checked)
+        {
+            spn2.innerHTML="Director  ";
+        }
+        else
+        {
+            spn2.innerHTML="";  
+        }
+    })
+    opt3.addEventListener("click",()=>
+    {
+        if(opt3.checked)
+        {
+            spn3.innerHTML="HoD  ";
+        }
+        else
+        {
+            spn3.innerHTML="";  
+        }
+    })
+    opt4.addEventListener("click",()=>
+    {
+        if(opt4.checked)
+        {
+            spn4.innerHTML="Student  ";
+        }
+        else
+        {
+            spn4.innerHTML="";  
+        }
+    })
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+</html>
+<script>
+    fetch('https://api.nationalize.io?name=nathaniel')//may be close 
+    .then((apidata)=>
+    {
+        console.log(apidata);
+        return apidata.json();
+
+    })
+
+    .then((actualdata)=>
+    {
+        console.log(actualdata);
+    })
+
+    .catch((error)=>{
+        console.log("Something Want to Wrong")
+    })
+</script>

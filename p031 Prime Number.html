@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~~Let's Check Prime Number~~
+    <br><br>
+    Enter Digit here:-- <input type="text" id="txtlim">
+    <br><br>
+    <input type="button" value="Check" id="btnch">
+    <br><br>
+    <span id="spnans"></span>
+    
+</body>
+</html>
+<script>
+    let txtlim=document.querySelector('#txtlim');
+    let btnch=document.querySelector('#btnch');
+    let spnans=document.querySelector('#spnans');
+
+    btnch.addEventListener("click",()=>
+    {
+        let lim=parseInt(txtlim.value);
+        let i,check=0;
+        alert(lim);
+    
+
+        for(i=2; i<=lim/2; i++)
+        {
+            if(lim%i==0)
+            {
+                check=1;
+                break;
+            }
+        }
+        if(check==1)
+        {
+            spnans.innerHTML=("Enter Enter Number is not Prime Number");
+        }
+        else{
+            spnans.innerHTML=("Enter Enter Number is Prime Number");
+        }
+
+    }
+    )
+</script>

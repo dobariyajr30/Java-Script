@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="line" style="font-weight: bold;">"If I had flying Squirrel I would name it after you"</p>
+    <p id="attribute">This is my <a href="https://github.com/dobariyajr30">profile</a></p>
+</body>
+</html>
+<script>
+    var line=document.getElementById("line");
+    var attribute=document.getElementById("attribute");
+
+    line.style.background="red";
+    attribute.style.boxShadow="2px 2px 5px 1px blue"
+    
+    line.style.cssText="color: blue; border: 1px solid black;"
+    attribute.setAttribute("style","color:red; border:1px solid blue");
+
+    console.log(line.style);
+    console.log(window.getComputedStyle(line));
+</script>

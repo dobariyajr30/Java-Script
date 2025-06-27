@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~CAPTCHA Number~</h1>
+    <br><br>
+    <input type="button" value="Generat" id="btngen">
+    <br><br>
+    CAPTCHA is:= <span id="spngen"></span>
+    <br><br>
+    Enter CAPTCHA here:= <input type="text" id="txtans">
+    <br><br>
+    <input type="button" value="Check" id="btnch">
+    <br><br>
+    <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spngen=document.querySelector("#spngen");
+    let txtans=document.querySelector("#txtans");
+    let btnch=document.querySelector("#btnch");
+    let spnans=document.querySelector("#spnans");
+
+    btngen.addEventListener("click",()=>
+    {
+        spngen.innerHTML=(Math.floor(Math.random()*41)+50);
+    }
+    )
+    btnch.addEventListener("click",()=>
+    {
+        if(txtans.value==spngen.innerHTML)
+        {
+            spnans.innerHTML="You Are human";
+        }
+        else
+        {
+            spnans.innerHTML="You Are Robot"; 
+        }
+    })
+
+</script>

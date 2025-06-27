@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">      
+    <link rel="stylesheet" href="Weather.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card_in">
+            <div class="search">
+                <div>
+                    <input type="text" class="txtin" id="txtin"> 
+                </div>
+                <div>
+                    <img src="IMG/Search Icon.png" id="srebtn" class="srebtn">
+                </div>
+            </div>
+            <img src="IMG/clouds.png" id="wt_img" class="wt_img">
+            <h1 class="txtdeg" id="txtdeg">22°C</h1>
+            <h1 class="txtcity" id="txtcity">Ahmedabad</h1>
+            <div class="bottom">
+                <div class="bottom_in">
+                    <div class="humidity">
+                        <div class="humidity_in_first">
+                            <img src="IMG/humidity.png" alt="">
+                        </div>
+                        <div class="humidity_in_second">
+                            <h3 class="humidity_deg" id="humidity_deg">15%</h3>
+                            <h3 class="humidity_name" id="">HUMIDITY</h3>
+                        </div>
+                    </div>
+                    <div class="wssp">
+                        <div class="humidity_in_first">
+                            <img src="IMG/wind.png" alt="">
+                        </div>
+                        <div class="humidity_in_second">
+                            <h3 class="humidity_deg" id="wssp_km">15 Km/h</h3>
+                            <h3 class="humidity_name" id="">Wind Speed</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let txtin=document.querySelector("#txtin");
+    let srebtn=document.querySelector("#srebtn");
+
+    let txtdeg=document.querySelector("#txtdeg");
+    let txtcity=document.querySelector("#txtcity");
+    let humidity_deg=document.querySelector("#humidity_deg");
+    let wssp_km=document.querySelector("#wssp_km");
+
+
+    srebtn.addEventListener("click",()=>
+        {
+            const link=`https://api.openweathermap.org/data/2.5/weather?q=${txtin.value}&APPID=5d73142196913cf134c3df8a3397a331&units=metric`;
+
+            fetch(link)
+
+            .then((response_ave_che)=>
+            {
+                if(!response_ave_che.ok)
+            {
+                throw new Error("There is something Prpblame");
+            }
+
+            return response_ave_che.json();
+            })
+
+            .then((data_ayi_gyo)=>
+            {
+                txtdeg.innerHTML=data_ayi_gyo.main.temp;
+                txtcity.innerHTML=data_ayi_gyo.name;
+                humidity_deg.innerHTML=`${data_ayi_gyo.main.humidity}°C`;
+                wssp_km.innerHTML=`${data_ayi_gyo.wind.speed}Km/h`; 
+                
+            })
+
+            .catch((error)=>
+            {
+                console.log("No Link is not coming");
+            })
+        }
+    )
+</script>

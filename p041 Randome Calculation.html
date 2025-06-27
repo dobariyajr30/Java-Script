@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 200%;">
+    ~~Let's Train Your Brain with Maths~
+    <br><br>
+    1st Number is:- <span id="spnno1"></span>
+    <br><br>
+    2nd Number is:- <span id="spnno2"></span>
+    <br><br>
+    <input type="button" value="Play" id="btnplay">
+    <br><br>
+    Checking:- <span id="spnch"></span>
+    <br><br>
+    <span id="spnprompt"></span>
+    <br><br>
+    Enter Your Answer Here :-- <input type="text" id="txtinput"> <input type="button" value="CHECK" id="btnch">
+    <br><br>
+    <span id="txtans"></span>
+</body>
+</html>
+<script>
+    let spnno1=document.querySelector("#spnno1");
+    let spnno2=document.querySelector("#spnno2");
+    let btnplay=document.querySelector("#btnplay");
+    let spnprompt=document.querySelector("#spnprompt");
+    let txtinput=document.querySelector("#txtinput");
+    let btnch=document.querySelector("#btnch");
+    let txtans=document.querySelector("#txtans");
+    let random=0;
+    let ans=0;
+
+    let spnch=document.querySelector("#spnch");
+
+    btnplay.addEventListener("click",()=>
+    {
+        spnno1.innerHTML=(Math.floor(Math.random()*100)+1);
+        spnno2.innerHTML=(Math.floor(Math.random()*100)+1);
+
+        random=(Math.floor(Math.random()*4)+1);
+
+        spnch.innerHTML=random;
+        
+        if(random==1)
+        {
+            spnprompt.innerHTML="Addition of Above Number";
+            ans=parseInt(spnno1.innerHTML)+parseInt(spnno2.innerHTML);
+        }
+
+        else if(random==2)
+        {
+            spnprompt.innerHTML="Subtraction of Above Number";
+            ans=parseInt(spnno1.innerHTML)-parseInt(spnno2.innerHTML);
+        }
+
+        else if(random==3)
+        {
+            spnprompt.innerHTML="Division of Above Number";
+            ans=parseInt(spnno1.innerHTML)/parseInt(spnno2.innerHTML);
+        }
+
+        else if(random==4)
+        {
+            spnprompt.innerHTML="Multiplication of Above Number";
+            ans=parseInt(spnno1.innerHTML)*parseInt(spnno2.innerHTML);
+        }
+
+    }
+    )
+
+    btnch.addEventListener("click",()=>
+    {
+        let check=parseFloat(txtinput.value); 
+
+        check.innerHTML=txtans.value;
+
+        if(ans==check)
+        {
+            txtans.innerHTML="Right Answer";
+        }
+        else
+        {
+            txtans.innerHTML="Wrong Answer";
+        }
+    }
+)
+
+
+    
+
+</script>

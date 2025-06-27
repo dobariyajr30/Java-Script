@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~CAPTCHA Text~</h1>
+    <br><br>
+    <input type="button" value="Generat" id="btngen">
+    <br><br>
+    <span id="spnans"></span>
+    <br><br>
+    Enter CAPTCHA here:= <input type="text" id="txtans">
+    <br><br>
+    <input type="button" value="VERIFY" id="btnans">
+    <br><br>
+    <span id="spnvrf"></span>
+
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spnans=document.querySelector("#spnans");
+    let i;
+    const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&';
+
+    let txtans=document.querySelector("#txtans");
+    let btnans=document.querySelector("#btnans");
+    let spnvrf=document.querySelector("#spnvrf");
+
+    let  chars_l=chars.length;
+
+    btngen.addEventListener("click",()=>
+    {
+        spnans.innerHTML=""; 
+        for(i=0; i<5; i++) 
+        {
+            spnans.innerHTML+=chars.charAt(Math.floor(Math.random()*chars_l));
+        }
+    }
+    )
+
+    btnans.addEventListener("click",()=>
+    {
+        if(spnans.innerHTML==txtans.value)
+        {
+            spnvrf.innerHTML="you are Human";
+        }
+        else
+        {
+            spnvrf.innerHTML="you are Robot";
+        }
+    })
+
+</script>

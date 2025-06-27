@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="product_page.css">
+</head>
+<body>
+    <div class="box">
+        <div class="box_in">
+            <div class="box_img">
+                <img src="IMG/image1.png" id="img_in">
+                <div class="img_ctr">
+                    <span class="img_ctr_btn active"></span>
+                    <span class="img_ctr_btn"></span>
+                    <span class="img_ctr_btn"></span>
+                </div>
+            </div>
+            <div class="box_detail">
+                <h1>Casual T Shirt</h1>
+                <h2>$15.00</h2>
+                <h3>30% OFF</h3>
+                <p>Wrangler is an American manufacturer of jeans and other clothing items, particularly workwear.</p>
+
+                <div class="size_selection">
+                    SIZE:-
+                    <label>
+                        <input type="radio" name="a" id=""><span>S</span> 
+                    </label>
+                    <label>
+                        <input type="radio" name="a" id=""><span>M</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="a" id=""><span>L</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="a" id=""><span>XS</span>
+                    </label>
+                </div>
+                
+                <div class="color_selection">
+                    Color:-
+                    <label>
+                        <input type="radio" class="" name="b"><span class="color_1"></span>
+                    </label>
+                    <label>
+                        <input type="radio" class="" name="b"><span class="color_2"></span>
+                    </label>
+                    <label>
+                        <input type="radio" class="" name="b"><span class="color_3"></span>
+                    </label>
+                    <label>
+                        <input type="radio" class="" name="b"><span class="color_4"></span>
+                    </label>
+                </div>
+
+                <div class="qnt_selection">
+                    <p>Quantity:-</p>
+                    <input type="number" value="1" class="">
+                </div>
+                <button class="buy_btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let img_in=document.querySelector("#img_in");
+    let btn=document.getElementsByClassName("img_ctr_btn");
+
+    btn[0].onclick=function()
+    {
+        img_in.src="IMG/image1.png"; 
+
+        for(bt of btn)
+        {
+            bt.classList.remove("active");
+        }
+        this.classList.add("active");
+    }
+    btn[1].onclick=function()
+    {
+        img_in.src="IMG/image2.png"; 
+
+        for(bt of btn)
+        {
+            bt.classList.remove("active");
+        }
+        this.classList.add("active");
+    }
+    btn[2].onclick=function()
+    {
+        img_in.src="IMG/image3.png"; 
+
+        for(bt of btn)
+        {
+            bt.classList.remove("active");
+        }
+        this.classList.add("active");
+    }
+
+</script>

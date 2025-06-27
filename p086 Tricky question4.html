@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    let data=[[10, 20, 33], 40, 50, "hello", "hi"];
+    let sum=0;
+    for (let element of data)
+    {
+        if(typeof element==='object') 
+        {
+            for (let x of data) 
+            {
+                if (typeof x=='number')
+                {
+                    sum+=x;
+                }
+            }
+        }
+
+        // Mehtod 2 
+        // if (typeof element==='number')
+        // {
+        //     sum+=element;
+        // }
+
+        // Method 3
+        // for(let element of a)
+        // {
+        //     if(typeof element=="number")
+        //     {
+        //         sum+=element;
+        //     }
+        // }
+
+
+    }
+    document.writeln("Sum of all number values: "+sum);
+</script>
+</script>

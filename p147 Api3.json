@@ -1,0 +1,23 @@
+[
+    {
+        "RollNo":"93",
+        "Name":"Jash",
+        "Course":"CE",
+        "Gender":"Male",
+        "Fees":"56000"
+    },
+    {
+        "RollNo":"94",
+        "Name":"Ved",
+        "Course":"CE",
+        "Gender":"Male",
+        "Fees":"56000"
+    },
+    {
+        "RollNo":"95",
+        "Name":"Khanjan",
+        "Course":"CE",
+        "Gender":"Male",
+        "Fees":"56000"
+    }
+]

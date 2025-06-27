@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="main-heading">Welcome to DOM Manipulation</h1>
+        <p id="paragraph" class="info">This is a paragraph.</p>
+        <ul id="item-list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </div>
+    <script>
+        // 1. getAttribute() - Get an existing attribute
+        let para = document.getElementById("paragraph");
+        console.log("Class Attribute:", para.getAttribute("class")); // Output: "info"
+
+        // 2. setAttribute() - Set a new attribute or modify an existing one
+        para.setAttribute("style", "color: red; font-weight: bold;");
+        console.log("New Style Attribute:", para.getAttribute("style")); // Output: "color: red; font-weight: bold;"
+
+        // 3. removeChild() - Remove an element
+        let container = document.getElementById("container");
+        let list = document.getElementById("item-list");
+        let removedChild = list.removeChild(list.lastElementChild); // Removes the last <li>
+        console.log("Removed Child:", removedChild.textContent); // Output: "Item 2"
+
+        // 4. createElement() - Create a new element
+        let newListItem = document.createElement("li");
+        newListItem.textContent = "New Item";
+
+        // 5. createTextNode() - Create a text node
+        let textNode = document.createTextNode(" - Added via createTextNode");
+        newListItem.appendChild(textNode); // Appends text to <li>
+        console.log("New Element with Text Node:", newListItem.outerHTML); // Output: "<li>New Item - Added via createTextNode</li>"
+
+        // 6. appendChild() - Append the new element to a parent
+        list.appendChild(newListItem); // Adds the new <li> to the <ul>
+        console.log("Updated List:", list.innerHTML);
+
+        // 7. replaceChild() - Replace an element
+        let newHeading = document.createElement("h2");
+        newHeading.textContent = "Updated Heading";
+        container.replaceChild(newHeading, document.getElementById("main-heading")); // Replaces the <h1> with the <h2>
+        console.log("Replaced Heading:", container.innerHTML);
+
+        // 8. childElementCount - Count child elements
+        console.log("Number of Child Elements in #container:", container.childElementCount); // Output: 3
+    </script>
+</body>
+</html>

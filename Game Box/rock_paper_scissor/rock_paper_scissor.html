@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="rock_paper_scissor.css">
+</head>
+
+<body>
+  <div class="back_arrow">
+    <a href="../game_index.html">
+      <div class="back_arrow_content">
+        <div>
+          <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
+        </div>
+        <div>
+          <p>Back</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="game_conent">
+    <div class="game_conent_in">
+      <div class="info">
+        <p class="info_in">Ready to play? Just click on Rock, Paper, or Scissors to begin!</p>
+      </div>
+      <div class="game_conent_main_in">
+        <div class="game_conent_main_in_left">
+          <div class="game_conent_main_in_left_in">
+            <div class="game_conent_main_in_left_in_img">
+              <img id="btnstart1" src="img/paper.png" alt="">
+            </div>
+            <div class="game_conent_main_in_left_in_img">
+              <img id="btnstart2" src="img/rock.png" alt="">
+            </div>
+            <div class="game_conent_main_in_left_in_img">
+              <img id="btnstart3" src="img/scissor.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="game_conent_main_in_mid">
+          <h3 id="count_down" class="game_conent_main_in_mid_in">GO!</h3>
+        </div>
+        <div class="game_conent_main_in_right">
+          <img id="img_comp" src="img/Bot.png" alt="">
+        </div>
+      </div>
+      <div class="win_text">
+          <h3 id="point_text"></h3><br>
+          <h2>
+              Your Score: <span id="user_score">0</span> &nbsp;&nbsp;|&nbsp;&nbsp;
+              Computer Score: <span id="comp_score">0</span>
+          </h2>
+          <h1 id="win_text_in"></h1>
+      </div>
+    </div>
+  </div>
+</body>   
+
+</html>
+
+<script>
+  btnstart1=document.querySelector("#btnstart1");
+  btnstart2=document.querySelector("#btnstart2");
+  btnstart3=document.querySelector("#btnstart3");
+  img_comp=document.querySelector("#img_comp");
+  point_text=document.querySelector("#point_text");
+  let comp=0;
+  let cnt=4;  
+  let u_choice=0;
+  let u_point=0;
+  let c_point=0;
+  let isCounting = false;
+  let gameOver = false;
+
+
+  btnstart1.addEventListener("click",()=> 
+  {
+    if (gameOver) return;
+    u_choice=1;
+    cnt=4;  
+    comp=(Math.floor(Math.random()*3)+1);
+    count_down_fun();
+  });
+
+  btnstart2.addEventListener("click",()=> 
+  {
+    if (gameOver) return;
+    u_choice=2;
+    cnt=4;  
+    comp=(Math.floor(Math.random()*3)+1);
+    count_down_fun();
+  });
+
+  btnstart3.addEventListener("click",()=> 
+  {
+    if (gameOver) return;
+    u_choice=3;
+    cnt=4;  
+    comp=(Math.floor(Math.random()*3)+1);
+    count_down_fun();
+  });
+
+  function count_down_fun()
+  {
+    if (isCounting) return; // prevent double clicking
+    isCounting = true;
+    
+    count_down=document.querySelector("#count_down");
+    cnt--;
+
+    if(cnt>0)
+    {
+      count_down.innerHTML = cnt;
+      setTimeout(count_down_fun, 1000);
+    } 
+    else 
+    {
+      count_down.innerHTML = "GO!";
+
+     if(comp == 1) 
+     {
+      img_comp.src = 'img/paper.png';
+
+      if(u_choice==1) 
+      {
+        point_text.innerHTML = "It's a draw.";
+      } 
+      else if(u_choice==2) 
+      {
+        point_text.innerHTML = "You get a point!";
+        u_point++;
+      } else if(u_choice==3)
+      {
+        point_text.innerHTML = "Computer gets a point.";
+        c_point++;
+      }
+
+    }
+     else if(comp==2) 
+      {
+          img_comp.src = 'img/rock.png';
+
+          if(u_choice==1) 
+          {
+            point_text.innerHTML = "You get a point!";
+            u_point++;
+          } else if(u_choice==2) 
+          {
+            point_text.innerHTML = "It's a draw.";
+          } 
+          else if(u_choice==3)
+          {
+            point_text.innerHTML = "Computer gets a point.";
+            c_point++;
+          }
+
+        } 
+     else if(comp==3) 
+        {
+          img_comp.src = 'img/scissor.png';
+
+          if(u_choice==1) 
+          {
+            point_text.innerHTML = "Computer gets a point.";
+            c_point++;
+          } else if(u_choice==2)
+          {
+            point_text.innerHTML = "You get a point!";
+            u_point++;
+          } else if(u_choice==3)
+          { 
+            point_text.innerHTML = "It's a draw.";
+          }
+
+        } 
+     else
+      {
+        alert("Something went wrong.");
+      }
+      
+    }
+     isCounting = false;
+
+      
+      document.querySelector("#user_score").innerText = u_point;
+      document.querySelector("#comp_score").innerText = c_point;
+      if(u_point==3 || c_point==3)
+      {
+        gameOver=true;
+        if (u_point==3) 
+        {
+          document.querySelector("#win_text_in").innerText="🎉 You Win the Game!";
+        } 
+        else if (c_point==3) 
+        {
+          document.querySelector("#win_text_in").innerText="🤖 Computer Wins the Game!";
+        }
+
+      }
+  }
+</script>
+
+
+
+<script>
+  // Select all game links
+  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
+
+  gameLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // stop immediate jump
+
+      // Add fade-out class to body
+      document.body.classList.add('fade-out');
+
+      // Wait for animation to complete (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>

@@ -1,0 +1,40 @@
+*{
+align-items: center;
+font-size: 110%;
+
+}
+.header{
+    text-align: center;
+    font-size: 150%;
+}
+.reult_button{
+    margin-top: 2.5%;
+    margin-left: 44%;
+    background-color: rgb(0, 204, 255);
+    border: 3px solid ;
+    border-radius: 3cap;
+    margin-bottom: 1.5%;
+}
+.table_second{
+    margin-left: 15%;
+}
+.gr_aa{
+    background-color: #d4edda;
+    color: #155724;
+}
+.gr_a{
+    background-color: #c3e6cb;
+    color: #0b2e13;
+}
+.gr_b{
+    background-color: #bee5eb;
+    color: #0c5460;
+}
+.gr_c{
+    background-color: #fff3cd;
+    color: #856404;
+}
+.gr_f{
+    background-color: #f8d7da;
+    color: #721c24;
+}

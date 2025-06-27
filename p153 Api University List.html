@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Let's Search the Univeristy</h1>
+    <br>
+    Enter Country Name Here:=<input type="text" id="txtcnt">
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>    
+    <span id="spn"> </span>
+</body>
+</html>
+<script>
+    let txtcnt=document.querySelector("#txtcnt"); 
+    let btngen=document.querySelector("#btngen"); 
+    let spn=document.querySelector("#spn"); 
+
+    btngen.addEventListener("click",()=>
+    {
+        const link=`http://universities.hipolabs.com/search?country=${txtcnt.value}`;
+
+        fetch(link)
+
+        .then((response_ave_che)=>
+        {
+            if(!response_ave_che.ok)
+            {
+                throw new Error("There is something Prpblame");
+            }
+
+            return response_ave_che.json();
+        })
+
+        .then((data_ayi_gyo)=>
+        {
+            for(let x of data_ayi_gyo)
+            {
+                spn.innerHTML +=`<p>${x.name}</p>`;
+            }
+        })
+
+        .catch((error)=>
+        {
+            console.log("No Link is not coming");
+            spn.innerHTML="No Link is not coming";
+        })
+    })
+</script>

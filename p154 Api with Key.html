@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Let's See the Gold Price Here</h1>
+    <br><br>
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>
+    INR:=<span id="spnind"></span>
+    <br>
+    USD:=<span id="spnusd"></span>
+    <br>
+    CAD:=<span id="spncad"></span>
+</body>
+</html> 
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spnind=document.querySelector("#spnind");
+    let spnusd=document.querySelector("#spnusd");
+    let spncad=document.querySelector("#spncad");
+
+    btngen.addEventListener(("click"),()=>
+    {
+        const link="https://api.metalpriceapi.com/v1/latest?api_key=358f049d1317f81a150e0e94907f8d11&base=INR&currencies=USD,INR,CAD";
+
+        fetch(link)
+
+        .then((resp_ave_che)=>
+        {
+            if(!resp_ave_che.ok)
+            {
+                throw new Error("No Link is not Fethich initially");
+            }   
+
+            return resp_ave_che.json();
+        })
+
+        .then((data_ayi_gyo)=>
+        {
+            spnind.innerHTML=data_ayi_gyo.rates.INR;
+            spnusd.innerHTML=data_ayi_gyo.rates.USD;
+            spncad.innerHTML=data_ayi_gyo.rates.CAD;
+        })
+    })
+</script>

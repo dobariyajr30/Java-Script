@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>Mumbai</li>
+        <li>Delhi</li>
+        <li>Pune</li>
+    </ul>
+</body>
+
+</html>
+<script>
+    let nodename2 = document.body.firstElementChild.nodeName;
+    alert(nodename2);
+
+    let cnt = document.body.firstElementChild.childElementCount;
+    alert(cnt);
+
+    var ulnode = document.body.firstElementChild;
+    alert(ulnode.childElementCount);
+
+    for (var i=0; i<ulnode.childElementCount; i++)
+    {
+        alert(ulnode.childNodes[i].nodeName);
+    }
+    for (var i = 0; i < ulnode.childElementCount; i++) 
+    {
+        alert(ulnode.children[i].innerHTML);
+    }
+
+
+</script>

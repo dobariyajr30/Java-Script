@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    let dt=[]
+
+    while(true)
+    {
+        let lim=prompt("1 for add 2 for remove(pop) 3 for print 4 for exit");
+
+        if(lim==1)
+        {
+            let x=Number(prompt("Enter Value=>"));
+            dt.push(x);
+            alert("Done");
+        }
+        else if(lim==2)
+        {
+            dt.pop();
+            alert("delete");
+        }
+        else if(lim==3)
+        {
+            alert(dt);
+        }
+        
+        else if(lim==4)
+		{
+			break;
+		}
+		else
+        {
+		    alert("Wrong option");
+		}
+    }
+
+</script>

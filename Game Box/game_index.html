@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="back_arrow">
+            <a href="login.html">
+                <div class="back_arrow_content">
+                    <div>
+                        <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
+                    </div>
+                    <div>
+                        <p>Back</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="content">
+            <div class="content_in">
+                <h1>Choose your game...</h1>
+            </div>
+            <div class="content_in_opt">
+                <div class="content_in_opt_box">
+                    <a href="snake_and_ladder/opt.html">
+                        <div class="content_in_opt_box_img">
+                            <img class="content_in_opt_box_img_in" src="img/snake and ladder icon.jpg" alt="">
+                        </div>
+                        <div class="content_in_opt_box_name">
+                            <p class="content_in_opt_box_name_in">snake and ladder</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="content_in_opt_box">
+                    <a href="tic_tac_toe/opt.html">
+                        <div class="content_in_opt_box_img">
+                            <img class="content_in_opt_box_img_in" src="img/tic_tac_toe.png" alt="">
+                        </div>
+                        <div class="content_in_opt_box_name">
+                            <p class="content_in_opt_box_name_in">Tic Tac Toe</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="content_in_opt_box">
+                    <a href="rock_paper_scissor/rock_paper_scissor.html">
+                        <div class="content_in_opt_box_img">
+                            <img class="content_in_opt_box_img_in" src="img/rock_paper_scissor.png" alt="">
+                        </div>
+                        <div class="content_in_opt_box_name">
+                            <p class="content_in_opt_box_name_in">Rock Paper Scissor</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="content_in_opt_box">
+                    <a href="wordle/wordle.html">
+                        <div class="content_in_opt_box_img">
+                            <img class="content_in_opt_box_img_in" src="img/wordel.jpeg" alt="">
+                        </div>
+                        <div class="content_in_opt_box_name">
+                            <p class="content_in_opt_box_name_in">Wordle</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="content_in_opt_box">
+                    <a href="memory_tester/memory_tester.html">
+                        <div class="content_in_opt_box_img">
+                            <img class="content_in_opt_box_img_in" src="img/memory_game.png" alt="">
+                        </div>
+                        <div class="content_in_opt_box_name">
+                            <p class="content_in_opt_box_name_in">Memory tester</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+  // Select all game links
+  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
+
+  gameLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // stop immediate jump
+
+      // Add fade-out class to body
+      document.body.classList.add('fade-out');
+
+      // Wait for animation to complete (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>

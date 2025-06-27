@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number Generator Between 1 to 50</h1>
+    click below button to Generate Randome number between 1 to 50:- <span id="gnr"></span>
+    <br>
+    <br>
+    <input type="button" value="Generate" id="btn">
+</body>
+</html>
+<script>
+    let gnr=document.querySelector("#gnr");
+    let btn=document.querySelector("#btn");
+
+    btn.addEventListener("click",()=>
+    {
+        gnr.innerHTML=((Math.random()*50)+1);
+    }
+    )
+</script>

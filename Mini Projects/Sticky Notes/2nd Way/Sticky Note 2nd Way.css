@@ -1,0 +1,74 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-image: url(Sticky\ BG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.heading{
+    text-align: center;
+    font-size: 400%;
+    margin-top: 3%;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.add{
+    background-color: white;
+    display: inline-block;
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 10%;
+    border-radius: 3cap;
+    margin-left: 3.5%;
+    margin-top: 2%;
+    
+}
+.in_txt_box{
+    width: 120%;
+    height: 150px;
+    margin-top: 10%;
+    border-radius: 1cap;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+.btnsub{
+    margin-top: 5%;
+}
+.spn{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div_btn{
+    display: flex;
+}
+
+.del{
+    width: 25px;
+    margin-left: 5%;
+    margin-top: 70%
+}
+.edit
+{
+    height: 25px;
+    margin-left: 50%;
+    margin-top: 72%
+}
+.li{
+   background-image: url(note_bg.png);
+   height: 220px;
+   width: 160%;
+   padding-top: 35%;
+   padding-left: 15%; 
+    margin-left:22%; 
+}
+.div_in{
+    margin-left: 5%;
+    height: auto;
+}

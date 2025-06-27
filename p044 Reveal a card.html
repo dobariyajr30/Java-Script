@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Let's Play Junglee Rummy~</h1>
+    <img id="img1" src="img/Card Back.jpg" style="width: 10%;"> <img id="img2" src="img/card1.jpg" style="width: 20%; display: none;">
+    <img id="img4" src="img/Card Back.jpg" style="width: 10%;"> <img id="img5" src="img/card2.jpg" style="width: 20%; display: none;">
+    <img id="img7" src="img/Card Back.jpg" style="width: 10%;"> <img id="img8" src="img/card3.jpg" style="width: 20%; display: none;">
+    <br><br>
+    <img id="img10" src="img/Card Back.jpg" style="width: 10%;"> <img id="img11" src="img/card4.jpg" style="width: 20%; display: none;">
+    <img id="img13" src="img/Card Back.jpg" style="width: 10%;"> <img id="img14" src="img/card5.jpg" style="width: 20%; display: none;">
+    <img id="img16" src="img/Card Back.jpg" style="width: 10%;"> <img id="img17" src="img/card6.jpg" style="width: 20%; display: none;">
+    
+</body>
+</html>
+<script>
+    let img3="";
+    let img6="";
+    let img9="";
+    let img12="";
+    let img15="";
+    let img18="";
+
+    img1.addEventListener("click",()=>
+    {
+        img3=img1.src;
+        img1.src=img2.src;
+        img2.src=img3;
+    }
+    )
+    img4.addEventListener("click",()=>
+    {
+        img6=img4.src;
+        img4.src=img5.src;
+        img5.src=img6;
+    }
+    )
+    img7.addEventListener("click",()=>
+    {
+        img9=img7.src;
+        img7.src=img8.src;
+        img8.src=img9;
+    }
+    )
+    img10.addEventListener("click",()=>
+    {
+        img12=img10.src;
+        img10.src=img11.src;
+        img11.src=img12;
+    }
+    )
+    img13.addEventListener("click",()=>
+    {
+        img15=img13.src;
+        img13.src=img14.src;
+        img14.src=img15;
+    }
+    )
+    img16.addEventListener("click",()=>
+    {
+        img18=img16.src;
+        img16.src=img17.src;
+        img17.src=img18;
+    }
+    )
+</script>

@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-image: url('img/Log in Background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+}
+.main{
+    display: flex;
+    height: 110%;
+}
+.right{
+    background-color: white;
+    box-shadow: 0px 0px 80px 30px rgb(0, 0, 0);
+    margin-left: 50%;
+    margin-top: 2%;
+    width: 40%;
+    border-radius: 3cap; 
+    text-align: center; 
+    height: 91%;  
+}
+.right_inner_box{
+    justify-content: center;
+    height: 40%;
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    text-align: left;
+}
+.right_inner_box_header{
+    font-size: 250%;
+    margin-top: 5%;
+}
+.right_inner_box_form{
+    margin-top: 10%;
+    font-size: 150%;  
+      
+}
+.input_name{
+    margin-top: 0%;
+    width: 100%;
+    font-size: 80%;
+    border: none; 
+    border-bottom: 2px solid black; 
+    padding: 5px; 
+    outline: none;
+    margin-bottom: 10%;
+}
+.btnsub{
+    text-align: center;
+}
+.btnsub_in{
+    font-size: 100%;
+    padding: 2%;
+    border-radius: 3cap;
+    color: rgb(255, 255, 255);
+    background-color: rgb(7, 173, 35);
+    box-shadow: 0px 0px 40px 10px rgb(255, 218, 55);
+}

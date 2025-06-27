@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body >
+    <div class="main">
+        <div class="">
+            <div class="index_content">
+              <h1>Welcome to Game Bar</h1>
+              <p>We build cool stuff... <br> sometimes by accident 😄</p>
+              <a href="login.html" class="btn">Get Started</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+  // Select all game links
+  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
+
+  gameLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // stop immediate jump
+
+      // Add fade-out class to body
+      document.body.classList.add('fade-out');
+
+      // Wait for animation to complete (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>

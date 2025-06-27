@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter Principle Amount: <input type="text" id="txtp">
+    <br>
+    Enter Rate: <input type="text" id="txtr">
+    <br>
+    Enter Time Period: <input type="text" id="txtt">
+    <br>
+    <input type="button" value="calculate" onclick="si()">
+    <br>
+    Simple Intrest is: <input type="text" id="txtans">
+</body>
+<script>
+    function si()
+    {
+        let p=parseInt(document.getElementById("txtp").value);
+        let t=parseInt(document.getElementById("txtr").value);
+        let r=parseInt(document.getElementById("txtt").value);
+        document.getElementById("txtans").value=(p*r*t)/100;
+    }
+</script>
+</html>

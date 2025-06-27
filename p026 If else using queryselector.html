@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~Voting~
+    <br><br>
+    Enter your Name: <input type="text" id="txtname">
+    <br><br>
+    Enter your Age: <input type="text" id="txtage">
+    <br><br>
+    <input type="button" value="CHECK" id="btnans">
+    <br><br>
+    <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtname=document.querySelector("#txtname");
+    let txtage=document.querySelector("#txtage");
+    let btnans=document.querySelector("#btnans");
+    let spnans=document.querySelector('#spnans');
+
+    btnans.addEventListener("click",()=>
+    {
+        let age=parseInt(txtage.value);
+        let name=(txtname.value);
+
+
+        if(age>=18)
+        {
+            spnans.innerHTML=(""+name+" you are eligible to vote");
+        }
+        else{
+            spnans.innerHTML=(""+name+" sorry you are not eligible yo vote")
+        }
+    }
+    )
+</script>

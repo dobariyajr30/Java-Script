@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+</html>
+<script>
+    let hello=()=>console.log("Called");
+    hello();
+
+    let welcome=(firstName,lastName)=>
+    {
+    document.writeln(`categoryName: ${firstName}<br>categoryElements: ${lastName} `)
+    }
+    welcome("Ram","Shah");
+
+
+    document.writeln("<br>");
+    let welcome2=(firstName,lastName)=>`Welcome categoryName: ${firstName}\ncategoryElements: ${lastName}`;
+    document.writeln(welcome2('Ram','Shah'))
+
+</script>

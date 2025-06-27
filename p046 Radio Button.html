@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Collage Option~</h1>
+    INDUS:-<input type="radio" name="a" id="btn1">
+    SAL:-<input type="radio" name="a" id="btn2">
+    SILVER OAK:-<input type="radio" name="a" id="btn3">
+    <br>
+    <h2>~Images~</h2>
+    <img src="" id="img1" alt="">
+</body>
+</html>
+<script>
+    let btn1=document.querySelector("#btn1");
+    let btn2=document.querySelector("#btn2");
+    let btn3=document.querySelector("#btn3");
+    
+    btn1.addEventListener("click",()=>
+    {
+        img1.src="img/INDUS photo.jpg"
+    }
+    )
+    btn2.addEventListener("click",()=>
+    {
+        img1.src="img/SAL.jpg"
+    }
+    )
+    btn3.addEventListener("click",()=>
+    {
+        img1.src="img/Silver Oak.jpg"
+    }
+    )
+</script>

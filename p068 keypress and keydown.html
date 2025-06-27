@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <span id="spn"></span>
+</body>
+</html>
+
+<script>
+    let spn = document.querySelector("#spn");
+    let txt = document.querySelector("#txt");
+
+    function handleKeypress(event) 
+    {
+        let key = event.key;
+        let asciiValue = event.charCode || event.keyCode;
+
+        spn.innerHTML = `You pressed "${key}" with ASCII value: ${asciiValue}`;
+    }
+
+    txt.addEventListener("keypress", handleKeypress);
+</script>

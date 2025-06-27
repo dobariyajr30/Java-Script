@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Sticky Note 2nd Way.css">
+</head>
+<body>
+    <p class="heading">Sticky Notes</p>
+    <div class="main" id="main">
+        <div class="add">
+            <h2>Create New Pin Here...</h2>
+            <textarea class="in_txt_box" id="txtin" placeholder="Enter Your pin here..."></textarea>
+            <input type="button" value="SUBMIT" id="btnsub" class="btnsub">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let txtin=document.querySelector("#txtin");
+    let btnsub=document.querySelector("#btnsub");
+    let main=document.querySelector("#main");
+
+    btnsub.addEventListener("click",()=>
+    {
+        if(txtin.value!="")
+        {
+            let div=document.createElement("div");
+            let li=document.createElement("li");
+            let del=document.createElement("img");
+            let edit=document.createElement("img");
+            let div_btn=document.createElement("div");
+
+
+            li.innerHTML=txtin.value;
+
+            edit.setAttribute("src","edit.png"); 
+            del.setAttribute("src","delete.png"); 
+
+            div_btn.className="div_btn";
+            div_btn.appendChild(edit);
+            div_btn.appendChild(del);
+
+            del.className="del";
+            edit.className="edit";
+            li.className="li";
+            div.className="div_in";
+
+            li.appendChild(div_btn);
+            div.appendChild(li);
+
+            del.addEventListener("click",()=>
+            {
+                li.remove();
+            })
+
+            edit.addEventListener("click",()=>
+            {
+                let value=prompt();
+
+                if(value!="")
+                {
+                    li.innerHTML=value;
+                    li.appendChild(div_btn);
+                }
+            })
+            main.appendChild(div);
+            txtin.value="";
+        }
+
+    })
+</script>

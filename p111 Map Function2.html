@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+</html>
+<script>
+    let data=[
+        {Name:"Ram",Age:34,Div:"A"},
+        {Name:"Shyam",Age:25,Div:"D"},
+        {Name:"Laxman",Age:22,Div:"F"},
+        {Name:"Mohit",Age:36,Div:"A"}
+    ];
+
+    var b=data.map(test);
+    document.writeln(b);
+
+    function test(x)
+    {
+        return x.Name;
+    }
+
+    var c=data.map(test2);
+    document.writeln(c);
+
+    function test2(y)
+    {
+        document.write("<br>");
+        return "The Student Name is"+y.Name+"of age "+y.Age+" studying in "+y.Div+" Division";
+    }
+</script>

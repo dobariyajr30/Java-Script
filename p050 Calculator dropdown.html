@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: larger;">
+    <h1>~Calculator~</h1>
+    <br><br>
+    Enter 1st Digit Heree:= <input type="text" id="txtno1">
+    <br><br>
+    Enter 2nd Digit Heree:= <input type="text" id="txtno2">
+    <br><br>
+    <Select id="opt">
+        <option >Select Your Option here</option>
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="mul">*</option>
+        <option value="div">/</option>
+    </Select>
+    <input type="button" value="Calculat" id="btncal">
+    <br><br>
+    Answer:= <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtno1=document.querySelector("#txtno1");
+    let txtno2=document.querySelector("#txtno2");
+    let opt=document.querySelector("#opt");
+    let btncal=document.querySelector("#btncal");
+    let spnans=document.querySelector("#spnans");
+    let total=0;
+
+    btncal.addEventListener("click",()=>
+    {
+        if(opt.value=="add")
+        {
+            total=parseInt(txtno1.value)+parseInt(txtno2.value);
+            spnans.innerHTML=total;
+        }
+        else if(opt.value=="mul")
+        {
+            total=parseInt(txtno1.value)*parseInt(txtno2.value);
+            spnans.innerHTML=total;
+        }
+        else if(opt.value=="div")
+        {
+            total=parseInt(txtno1.value)/parseInt(txtno2.value);
+            spnans.innerHTML=total;
+        }
+        else if(opt.value=="sub")
+        {
+            total=parseInt(txtno1.value)-parseInt(txtno2.value);
+            spnans.innerHTML=total;
+        }
+        
+    })
+
+</script>

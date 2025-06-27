@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p033 Odd Even colorfull.css">
+    <title>Document</title>
+</head>
+<body>
+    ~Let's Print Odd-Even colorfully~
+    <br><br>
+    Enter Limit: <input type="text" id="txtlim">
+    <br><br>
+    <input type="button" value="CHECK" id="btnch">
+    <br><br>
+    List:<span id="spnli"></span>
+</body>
+</html>
+<script>
+    let txtliim=document.querySelector("#txtlim");
+    let btnch=document.querySelector('#btnch');
+    let spnli=document.querySelector('#spnli');
+
+    btnch.addEventListener("click",()=>
+    {
+        let lim=parseInt(txtlim.value);
+        let i;
+        let str="";
+
+        for(i=0; i<=lim; i++)
+        {
+            if(i%2==0)
+            {
+                str+=`<span class="even">${i}</span><br/>`;
+            }
+            else
+            {
+                str+=`<span class="odd">${i}</span><br/> `;
+            }
+        }
+        spnli.innerHTML=str;
+    }
+)
+
+</script>

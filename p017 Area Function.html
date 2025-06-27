@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Height: <input type="text" id="h">
+    <br>
+    Base: <input type="text" id="b">
+    <br>
+    <input type="button" value="Find Area" onclick="area()">
+
+    Area of Trianle: <input type="text" id="ans">
+</body>
+<script>
+    function area() 
+    {
+        let h = parseInt(document.getElementById("h").value);
+        let b = parseInt(document.getElementById("b").value);
+
+        document.getElementById("ans").value = (h * b) / 2;
+    }
+</script>
+
+</html>

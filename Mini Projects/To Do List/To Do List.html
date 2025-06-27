@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="To Do List.css">
+</head>
+<body>
+    <h1 class="heading">To do List</h1>
+    <div class="main_box">
+        <div class="input_field">
+            <div class="input_field_in">
+                <input type="text" name="" id="ip" placeholder="Enter task...">
+                <img src="IMG/save.png" class="input_icon" id="ip_btn">
+            </div>
+            <hr class="hr">
+       </div> 
+       <div class="list">
+            <span id="spn"></span>
+       </div>        
+    </div>
+</body>
+</html>
+<script>
+    let ip=document.querySelector("#ip");
+    let ip_btn=document.querySelector("#ip_btn");
+    let spn=document.querySelector("#spn");
+
+    ip_btn.addEventListener("click",()=>
+    {
+        let li=document.createElement("li");
+        let del=document.createElement("img");
+        let edit=document.createElement("img");
+
+        if(ip.value!="")
+        {
+            li.innerHTML=ip.value;
+            del.setAttribute("src","IMG/delete.png"); 
+            edit.setAttribute("src","IMG/edit.png"); 
+
+            del.style.width = "25px"; 
+            edit.style.width = "25px";
+            edit.style.marginLeft="80%"; 
+            del.style.marginLeft="3%"; 
+            edit.style.marginTop="-5%"; 
+            del.style.marginTop="-5%"; 
+            
+            li.appendChild(edit);
+            li.appendChild(del);
+
+            spn.appendChild(li);
+
+            del.addEventListener("click",()=>
+            {
+                li.remove();
+            })
+
+            edit.addEventListener("click",()=>
+            {
+                let value=prompt();
+                li.innerHTML=value;
+
+                li.appendChild(edit);
+                li.appendChild(del);
+            })
+            ip.value = "";
+        }
+        
+    })
+</script>

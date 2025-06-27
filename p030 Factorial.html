@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~Let calculate Factorial Of Number~
+    <br><br>
+    Enter Number here: <input type="text" id="txtno">
+    <br><br>
+    <input type="button" value="calculate" id="btnans">
+    <br><br>
+    Series: <span id="spnsr"></span>
+    <br><br>
+    Factorial of Given Number is: <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtno=document.querySelector('#txtno');
+    let btnans=document.querySelector('#btnans');
+    let spnans=document.querySelector('#spnans');
+    let spnsr=document.querySelector('#spnsr');
+
+    btnans.addEventListener("click",()=>
+        {
+            let lim=parseInt(txtno.value);
+            let i;
+            let mul=1;
+            let str="";
+
+            for(i=1; i<=lim; i++)
+            {
+                mul*=i;
+                str+=("*"+i);
+            }
+            
+            spnsr.innerHTML=(str);
+            spnans.innerHTML=(mul);
+        }
+    )
+</script>

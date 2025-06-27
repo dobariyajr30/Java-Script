@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="START">
+    <table border="5" style="margin-left: 45%;">
+        <tr>
+            <td><img src="" width="120" id="img1"></td>
+        </tr>
+        <tr>
+            <td><img src="" width="120" id="img2"></td>
+        </tr>
+        <tr>
+            <td><img src="" width="120" id="img3"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    let btn=document.querySelector("#btn");
+    let img1=document.querySelector("#img1");
+    let img2=document.querySelector("#img2");
+    let img3=document.querySelector("#img3");
+
+    btn.addEventListener("click",()=>
+    {
+        start_signal();
+    })
+    
+    function start_signal()
+    {
+        function red()
+        {
+            img1.src="img/Signal/Red.jpg";
+            setTimeout(()=>img1.src="",5000);
+        }
+        
+        function yellow()
+        {
+            img2.src="img/Signal/yellow.jpg";
+            setTimeout(()=>img2.src="",3000);
+        }
+        function green()
+        {
+            img3.src="img/Signal/green.jpg";
+            setTimeout(()=>img3.src="",5000);
+        }
+
+        setTimeout(red,0);
+        setTimeout(yellow,5000);
+        setTimeout(green,8000);
+
+        setTimeout(start_signal,13000)
+    }
+</script>

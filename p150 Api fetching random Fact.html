@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <h1>Random Fact on Cats</h1>
+    <br>
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>
+    <b><span id="spn"></span></b>
+</body>
+</html>
+<script>
+    const link="https://catfact.ninja/fact";
+    let btngen=document.querySelector("#btngen");
+    let spn=document.querySelector("#spn");
+
+    btngen.addEventListener("click",()=>
+    {
+        fetch(link)
+        
+        .then((resp_ave_che)=>
+        {
+            if(!resp_ave_che.ok)
+            {
+                throw new Error("Failed to fatch Cat Fact.");
+            }
+
+            return resp_ave_che.json();
+        })
+
+        .then((data_ayi_gyo)=>
+        {
+            spn.innerHTML=data_ayi_gyo.fact;
+        })
+
+        .catch((error)=>
+        {
+                console.error("Error fetching API",error);
+                spn.innerHTML="Failed to fatch Cat Fact.";
+        })
+    })
+</script>

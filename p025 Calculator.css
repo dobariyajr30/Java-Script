@@ -1,0 +1,23 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.heading{
+    text-align: center;
+    margin-top: 3%;
+}
+.box{
+    display: flex;
+    margin-top: 5%;
+}
+.sum{
+    font-size: 100%;
+    border: 2px solid black;
+}
+.Add_tital{
+    text-align: center;
+    margin-bottom: 3%;
+}
+.no1_box{
+    width: 15%;
+}

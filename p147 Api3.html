@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+</html>
+<script>
+    fetch("p147 Api3.json")
+    .then(response=>response.json())
+    .then((data)=>
+    {
+        for(var x in data)
+        {
+            let a=(`${data[x].RollNo}-${data[x].Name}-${data[x].Course}-${data[x].Gender}-${data[x].Fees}`)
+            document.writeln("<br>");
+            document.writeln(a);
+        }
+    })
+    .catch((error)=>console.log("Something Want to Wrong"));
+</script>

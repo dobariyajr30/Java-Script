@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Let's Predict The Age</h1> 
+    <br><br>
+    Enter Name Here:=<input type="text" id="txtname">
+    <input type="button" value="Submit" id="btngen">
+    <br><br>
+    <span id="spn"></span>  
+</body>
+</html>
+<script>
+    let txtname=document.querySelector("#txtname");
+    let btngen=document.querySelector("#btngen");
+    let spn=document.querySelector("#spn");
+
+    btngen.addEventListener("click",()=>
+    {
+        const link=`https://api.agify.io?name=${txtname.value}`
+        
+        fetch(link)
+
+        .then((resp_ave_che)=>
+        {
+            if(!resp_ave_che.ok)
+            {
+                throw new Error("Failed to Fetch")
+            }
+
+            return resp_ave_che.json();
+        })
+
+        .then((data_avi_gyo)=>
+        {
+            spn.innerHTML=("Your Age Might be:="+data_avi_gyo.age);
+        })
+
+        .catch((error)=>
+        {
+            spn.innerHTML="Something Went to Wrong";
+        })
+        
+    })
+
+</script>

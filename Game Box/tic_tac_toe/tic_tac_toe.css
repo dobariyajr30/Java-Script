@@ -1,0 +1,150 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+background: linear-gradient(135deg, #f4f4f4, #d3cce3);
+font-family: 'Open Sans', sans-serif;
+opacity: 0;
+transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+a{
+  color: white;
+  font-weight: 800;
+  margin: 10px;
+  text-decoration: none;
+}
+/* opt start */
+.opt_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 86vh;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+.opt_content p{
+  color: #4a4646;
+  font-size: 32px;
+  font-weight: 700;
+}
+.opt{
+    display: flex;
+    margin-top: 20px;
+}
+.opt p{
+  color: #fff;
+}
+.opt_in{
+    border-radius: 3cap;
+    margin: 5px;
+    padding: 20px;
+}
+/* opt end */
+.btn{
+  background-color: #9575cd;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background-color: #7e57c2;
+}   
+
+.back_arrow{
+  background-color: #9575cd;
+  color: #ffffff;
+  width: 110px;
+  height: 50px;
+  margin: 20px 20px;
+  border-radius: 3cap;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+.back_arrow_content{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+
+}
+.back_arrow_in{
+  width: 50px;
+}
+
+/* friend start */
+.frd_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 86vh;
+}
+.frd_content_in_table{
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #e3f2fd, #e1bee7);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.frd_content_in_table td{
+  width: 150px;
+  height: 150px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #b39ddb;
+  color: #512da8;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.frd_content_in_table td input{
+  text-decoration: none;
+  border: none;
+}
+
+.frd_content_in_table td:hover {
+  background-color: #d1c4e9;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.spn_frd_status{
+  margin-top: 20px;
+  font-size: 50px;
+  color: #7e57c2;
+}
+
+/* friend end */
+
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .opt{
+    flex-direction: column;
+    padding: 0px;
+  }
+  .opt_in{
+    border-radius: 3cap;
+    margin: -20px 10px;
+    padding: 20px;
+  }
+  .spn_frd_status{
+    font-size: 35px;
+  }
+  
+}

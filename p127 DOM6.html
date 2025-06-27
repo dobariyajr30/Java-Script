@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id_sec">This is using Id</h1>
+    <p name="name_sec">This is using name</p>
+    <p name="name_sec">This is using also same name</p>
+    <br><br>
+    <div class="div_cl">
+        <p class="div_p">Highlighted paragraph inside container.</p>
+        <p>Another paragraph inside container.</p>
+    </div>
+    <br><br>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+    </ul>
+</body>
+</html>
+<script>
+    const first=document.getElementById("id_sec");
+    first.style.color="red";
+
+    const second=document.getElementsByName("name_sec");
+    second.forEach((pera)=>
+    {
+        pera.style.fontWeight="bold"
+    })
+    console.log("name_sec:",second);
+
+    const third=document.getElementsByTagName("li");
+    for (let item of third) 
+    {
+        item.style.listStyle = "square";
+    }
+
+    const fourth=document.getElementsByClassName("div_p");
+    for(let pera of fourth)
+    {
+        pera.style.border="1px solid red";
+    }   
+    console.log("QurySelcetor:",fourth);
+    
+    const fifth=document.querySelector(".div_cl p");
+    fifth.style.textDecoration = "underline";
+
+    const sixth = document.querySelectorAll("ul li");
+    sixth.forEach((item, index)=> 
+    {
+        item.textContent += `(Item ${index + 1})`;
+    });
+    console.log("querySelectorAll:", sixth);
+</script>

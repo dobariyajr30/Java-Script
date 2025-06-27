@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+</html>
+<script>
+    let str="Hello it's me jash";
+    let str2="studying Js";
+
+    let prnt=document.writeln(str);
+    document.writeln("<br>");
+
+    document.writeln("<br>");
+    let slc1=str.slice(7,13);
+    let slc2=str.slice(7);
+    let slc3=str.slice(-4);
+    document.writeln("slc1="+slc1+"<br>");
+    document.writeln("slc2="+slc2+"<br>");
+    document.writeln("slc3="+slc3+"<br>");
+    document.writeln("<br>");
+    
+    
+    document.writeln("<br>");
+    let sbstr=str.substring(7,13); //(start,end)
+    document.writeln(sbstr); 
+    document.writeln("<br>");
+    let sbst=str.substr(7,2); //(start,lenght)
+    document.writeln(sbst);
+    document.writeln("<br>");
+    
+    document.writeln("<br>");
+    let lwr=str.toLowerCase();
+    document.write(lwr);
+    document.writeln("<br>");
+    let upr=str.toUpperCase();
+    document.write(upr);
+    document.writeln("<br>");
+
+    document.writeln("<br>");
+    let con=str.concat(" "+str2);
+    document.writeln(con);
+    document.writeln("<br>");
+
+    document.writeln("<br>");
+    let indx=str.indexOf("me");
+    document.writeln("Index of 'me':"+indx+"<br>");
+    
+    let lstindx=str.lastIndexOf("e");
+    document.writeln("Last index of 'e': "+lstindx+"<br>");
+    
+    let includes=str.includes("jash");
+    document.writeln("Includes 'jash': "+includes+"<br>");
+    
+    let starts=str.startsWith("Hello");
+    document.writeln("Starts with 'Hello': "+ starts+"<br>");
+    
+    let ends=str.endsWith("jash");
+    document.writeln("Ends with 'jash': "+ends+"<br>");
+    
+    document.writeln("<br>");
+    let rep=str.replace("jash", "John");
+    document.writeln("Replace 'jash' with 'John': "+rep+"<br>");
+    
+    let trimStr="    Extra space    ";
+    let trim=trimStr.trim();
+    document.writeln("Trimmed string: '"+trim+"'<br>");
+    
+    document.writeln("<br>");
+    let splitStr=str.split(" ");
+    document.writeln("Split string: "+splitStr.join("<>")+"<br>");
+
+    let charAt=str.charAt(7);
+    document.writeln("Character at index 7: "+charAt+"<br>");
+    
+    let charCode=str.charCodeAt(7);
+    document.writeln("Unicode of character at index 7: "+charCode+"<br>");
+    
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Country & It's Flag~</h1>
+    USA:=
+    <input type="radio" name="a" id="btn1">
+    China:=
+    <input type="radio" name="a" id="btn2">
+    Japan:=
+    <input type="radio" name="a" id="btn3">
+    Argentina:=
+    <input type="radio" name="a" id="btn4">
+    <br><br>
+    <img style="width: 20%;" src="" id="img1">
+</body>
+</html>
+<script>
+    let btn1=document.querySelector("#btn1");
+    let btn2=document.querySelector("#btn2");
+    let btn3=document.querySelector("#btn3");
+    let btn4=document.querySelector("#btn4");
+
+    btn1.addEventListener("click",()=>
+    {
+        img1.src="img/USA.png";
+        document.bgColor="red";
+    })
+    btn2.addEventListener("click",()=>
+    {
+        img1.src="img/China.png";
+        document.bgColor="green";
+    })
+    btn3.addEventListener("click",()=>
+    {
+        img1.src="img/Japan.png";
+        document.bgColor="purple";
+    })
+    btn4.addEventListener("click",()=>
+    {
+        img1.src="img/Argentina.png";
+        document.bgColor="sky blue";
+    })
+</script>

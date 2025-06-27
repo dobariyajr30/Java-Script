@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+</html>
+<script>
+    document.writeln("Check The Log");
+    const school = new Object();
+    school.name = 'Vivekanada school';
+    school.location = 'Delhi';
+    school.established = 1971;
+    school.displayInfo =function () 
+    {
+        console.log(`${school.name} was establishedin ${school.established} at ${school.location}`);
+    }
+
+    school.displayInfo();
+</script>

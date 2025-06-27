@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="cmbop">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="purple">purple</option>
+    </select>
+</body>
+</html>
+<script>
+    let cmbop=document.querySelector("#cmbop");
+    
+    cmbop.addEventListener("click",()=>
+    {
+        let item=cmbop.value;
+
+        if(item=="red")
+        {
+            document.bgColor="red";
+        }
+        else if(item=="blue")
+        {
+            document.bgColor="sky blue";
+        }
+        else if(item=="purple")
+        {
+            document.bgColor="purple";
+        }        
+        else if(item=="green")
+        {
+            document.bgColor="green";
+        }        
+    }
+    )
+    
+    
+</script>

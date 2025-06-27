@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Randome Number Generator</h1>
+    <br>
+    <h2>Number Betwenn 0 & 1:- <span id="demo1"></span></h2> 
+    <br>
+    <h2>Number Betwenn 1 & 10:- <span id="demo2"></span></h2> 
+    <br>
+    <h2>Number Betwenn 1 & 100:- <span id="demo3"></span></h2> 
+    <br>
+    <h2>Number Betwenn 1 & 10:- <span id="demo4"></span></h2> 
+</body>
+</html>
+<script>
+    document.getElementById("demo1").innerHTML = Math.random();
+    document.getElementById("demo2").innerHTML = Math.random()*10;
+    document.getElementById("demo3").innerHTML = Math.random()*100;
+    document.getElementById("demo4").innerHTML = ((Math.random()*10)+1);
+</script>

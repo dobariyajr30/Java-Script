@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Events Example</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body onload="onPageLoad()" onresize="onResize()" onunload="onUnload()">
+
+<h2>www.Shyamsir.com</h2>
+
+<!-- CLICK -->
+<button onclick="alert('Clicked!')">Click</button><br><br>
+
+<!-- DOUBLE CLICK -->
+<button ondblclick="alert('Double Clicked!')">Double Click</button><br><br>
+
+<!-- RIGHT CLICK -->
+<div oncontextmenu="alert('Right Clicked!'); return false;">Right Click Here</div><br><br>
+
+<!-- MOUSE HOVER -->
+<div id="box"
+     onmouseover="this.style.backgroundColor='orange'"
+     onmouseout="this.style.backgroundColor='lightblue'">
+     Mouse Hover / Mouse Out
+</div>
+
+<!-- MOUSE UP -->
+<button onmouseup="alert('Mouse Released!')">Mouse Up</button><br><br>
+
+<!-- KEY EVENTS -->
+<input type="text" 
+       onkeypress="console.log('Key Press')" 
+       onkeydown="console.log('Key Down')" 
+       onkeyup="console.log('Key Up')" 
+       placeholder="Type here..."><br><br>
+
+<!-- LOAD, UNLOAD, RESIZE -->
+<script>
+  function onPageLoad() {
+    console.log("Page Loaded");
+  }
+
+  function onUnload() {
+    console.log("Page Unloaded");
+  }
+
+  function onResize() {
+    console.log("Page Resized");
+  }
+</script>
+
+</body>
+</html>
+

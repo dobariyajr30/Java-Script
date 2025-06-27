@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~ Simple Intrest Calculator ~
+    <br><br>
+    Enter Principale Amount: <input type="text" id="txtpr">
+    <br><br>
+    Enter Rate: <input type="text" id="txtrt">
+    <br><br>
+    Enter Time Period: <input type="text" id="txttm">
+    <br><br>
+    <input type="button" value="Calculate" id="btncal">
+    <br>
+    Simple Intrest is: <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtpr=document.querySelector('#txtpr');
+    let txtrt=document.querySelector('#txtrt');
+    let txttm=document.querySelector('#txttm');
+    let btncal=document.querySelector('#btncal');
+    let spnans=document.querySelector('#spnans');
+
+    btncal.addEventListener("click",()=>
+        {
+            let pr=parseFloat(txtpr.value);
+            let tm=parseInt(txttm.value);
+            let rt=parseInt(txtrt.value);
+
+            spnans.innerHTML=(pr*tm*rt)/100;
+        }
+    )
+</script>

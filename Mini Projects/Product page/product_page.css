@@ -1,0 +1,146 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Poppins',sans-serif;  
+}
+body{
+    background-color: #033631; 
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+.box_in{
+    display: flex;
+    width: 800px;
+}
+.box_img{
+    flex-basis: 47%;
+    background-color: black;
+    transform: scale(1.05);
+    box-shadow: -1px 5px 10px 10px rgb(0,0,0,0.3);
+    position: relative;
+}
+.box_img img{
+    width: 100%;
+    display: block;
+    padding-top: 100px;
+}
+.img_ctr{
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+}
+.img_ctr_btn{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    margin: 10px;
+    cursor: pointer;
+}
+.img_ctr_btn.active{
+    background: #553ff0;
+}
+.box_detail{
+    flex-basis: 53%;
+    background-color: white;
+    color: #bf9b42;
+    box-shadow: -10px 5px 10px 10px rgb(0,0,0,0.5);
+    padding: 40px;
+    padding-left: 60px;
+}
+.box_detail h1{
+    color: #042a2b;
+}
+.box_detail h2{
+    color: #f4a259;
+}
+.box_detail h3 {
+    color: #d64550;
+}
+.box_detail p{
+    margin-top: 5%;
+    color: #4caf50;
+    font-size: 18px;
+}
+.size_selection{
+    margin-top: 5%;
+}
+.size_selection label{
+    margin-left: 6%;
+    margin-top: 10%;
+}
+.size_selection input:checked + span{
+    color: rgb(0, 138, 46);
+    font-weight: 600;
+}
+.size_selection input{
+    display: none;
+}
+
+.color_selection{
+    margin-top: 5%;
+}
+.color_selection label{
+    margin-left: 6%;
+    margin-top: 10%;
+}
+.color_selection span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 3%;
+    cursor: pointer;
+}
+.color_1{
+    background: red;
+}
+.color_2{
+    background: #00d874;
+}
+.color_3{
+    background: blue;
+}
+.color_4{
+    background: pink;
+}
+.color_selection input:checked+span{
+    transform: scale(0.7);
+    box-shadow: 0 0 0 4px #fff,0 0 0 6px #000;    
+}
+.color_selection input{
+    display: none;
+}
+.qnt_selection{
+    display: flex;
+    align-items: center;
+}
+.qnt_selection input{
+    width: 25px;
+    height: 15px;   
+    border: 0;
+    outline: 0;
+    padding: 2px 2px 2px 15px;
+    background: #eee;
+    border-radius: 12px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.buy_btn{
+    background-color: #033631;
+    color: white;
+    border-radius: 3cap;
+    font-size: 20px;
+    padding: 10px;
+    width: 400px;
+    margin-top: 60px;
+    cursor: pointer;
+}
+.buy_btn:hover{
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}

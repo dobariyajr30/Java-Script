@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 150%;">
+    <h1>~Direction CAPTHCA~</h1>
+    <br>
+    <input type="button" value="GENERATE" id="btngen">
+    <img src="" width="200" id="imghand">
+    <br>
+    Select Image from Below to Match the direction of hand
+    <br><br>
+    <img src="img/CAPTCHA/Direction/Chair/1.jpg" width="200">
+    <input type="radio" name="a" id="chimg1">
+
+    <img src="img/CAPTCHA/Direction/Chair/2.jpg" width="200">
+    <input type="radio" name="a" id="chimg2">
+   
+    <img src="img/CAPTCHA/Direction/Chair/3.jpg" width="200">
+    <input type="radio" name="a" id="chimg3">
+    
+    <img src="img/CAPTCHA/Direction/Chair/4.jpg" width="200">
+    <input type="radio" name="a" id="chimg4">
+    <br><br>
+    <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let imghand=document.querySelector("#imghand");
+    let spnans=document.querySelector("#spnans");
+    let chimg1=document.querySelector("#chimg1");
+    let chimg2=document.querySelector("#chimg2");
+    let chimg3=document.querySelector("#chimg3");
+    let chimg4=document.querySelector("#chimg4");
+    let r=0;
+
+    btngen.addEventListener("click",()=>
+    {
+        r=(Math.floor(Math.random()*4)+1);
+    
+        imghand.src=`img/CAPTCHA/Direction/Hand/${r}.jpg`
+    })
+
+    chimg1.addEventListener("click",()=>
+    {
+        if(r==1)
+        {
+            spnans.innerHTML="Your are Human";
+        }
+        else
+        {
+            spnans.innerHTML="Your are Robot";
+        }
+    })
+    
+    chimg2.addEventListener("click",()=>
+    {
+        if(r==2)
+        {
+            spnans.innerHTML="Your are Human";
+        }
+        else
+        {
+            spnans.innerHTML="Your are Robot";
+        }
+    })
+    chimg3.addEventListener("click",()=>
+    {
+        if(r==3)
+        {
+            spnans.innerHTML="Your are Human";
+        }
+        else
+        {
+            spnans.innerHTML="Your are Robot";
+        }
+    })
+    chimg4.addEventListener("click",()=>
+    {
+        if(r==4)
+        {
+            spnans.innerHTML="Your are Human";
+        }
+        else
+        {
+            spnans.innerHTML="Your are Robot";
+        }
+    })
+
+</script>

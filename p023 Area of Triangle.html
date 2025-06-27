@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~ Calculator to find Area of Triangle ~
+    <br><br>
+    Enter the Length: <input type="text" id="txtln">
+    <br><br>
+    Enter the Bredth: <input type="text" id="txtbr">
+    <br><br>
+    <input type="button" value="Calculate" id="btncl">
+    <br><br>
+    Area of Triangle is: <span id="spnarea"></span>
+</body>
+</html>
+<script>
+    let txtln=document.querySelector("#txtln");
+    let txtbr=document.querySelector("#txtbr");
+    let btncl=document.querySelector('#btncl');
+    let spnarea=document.querySelector("#spnarea");
+
+    btncl.addEventListener("click",()=>
+    {
+        let length=parseInt(txtln.value);
+        let breadth=parseInt(txtbr.value);
+
+        let area=(length*breadth*0.5);
+        spnarea.innerHTML=area;
+    }
+    )
+</script>

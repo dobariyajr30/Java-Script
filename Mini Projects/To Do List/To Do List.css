@@ -1,0 +1,61 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-image: url("To\ Do\ list\ BG.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    color: white;
+    font-size: 300%;
+    margin-top: 5%;
+}
+.main_box{
+    background-color: white;
+    width: 30%;
+    padding: 0% 5%;
+    border-radius: 3cap;
+    padding-bottom: 10%;
+}
+.input_field{
+    position: relative;
+    width: 100%;
+}
+
+.input_field input {
+
+    width: 100%;
+    padding-right: 40px; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    margin-top: 10%;
+    
+}
+
+.input_icon{
+    position: absolute;
+    margin-top: 11.5%;
+    margin-left: -10%; 
+    width: 25px;
+    cursor: pointer;
+}
+.hr{
+    width: 132%;
+    margin-left: -16%;
+    margin-top: 10%;
+}
+.list{
+    margin-top: 5%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .spn li{
+        padding-top: 5%;
+    }
+</style>
+<body>
+    <h1>~Frequently Ask Question~</h1>
+    Enter You Question Here:=<input type="text" id="txtque">
+    <input type="button" value="SUBMIT" id="btnsub">
+    <br>    
+    <span id="spn" class="spn"></span>
+</body>
+</html>
+<script>
+    let txtque=document.querySelector("#txtque");
+    let btnsub=document.querySelector("#btnsub");
+
+    btnsub.addEventListener("click",()=>
+    {
+      if(txtque.value!="")
+      {
+        const li=document.createElement("li")
+        const ta=document.createElement("textarea")
+        const de=document.createElement("button")
+        const subans=document.createElement("button");
+
+        li.innerHTML=txtque.value+("<br> If Any Answere Enter Here:=");
+        li.appendChild(ta);
+        li.appendChild(de);
+        li.appendChild(subans);
+        de.innerHTML="DELETE";
+        subans.innerHTML="SUBMIT";
+
+
+        spn.appendChild(li);
+
+        de.addEventListener("click",()=>
+        {
+            li.remove();
+        })
+
+        subans.addEventListener("click",()=>
+        {
+            const at=document.createElement("p");
+            at.innerHTML= ta.value;
+            li.appendChild(at);
+            ta.value = ""; 
+        })
+
+      }
+    });
+</script>

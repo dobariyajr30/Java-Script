@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic API Fetch</title>
+</head>
+<body>
+    <h1>Nationalize API</h1>
+    <form id="nameForm">
+        <label for="name">Enter a name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Result:</h2>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById("nameForm").addEventListener("submit", function (event) 
+        {
+        event.preventDefault();
+
+            const nameInput=document.getElementById("name").value;
+            const apiUrl=`https://api.nationalize.io?name=${nameInput}`;
+
+            fetch(apiUrl)
+                .then((response) => 
+                {
+                    if (!response.ok)
+                    {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+                })
+                .catch((error) => {
+                    console.error("Error fetching the API:", error);
+                    document.getElementById("result").textContent = "Something went wrong. Please try again.";
+                });
+        });
+    </script>
+</body>
+</html>

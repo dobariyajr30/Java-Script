@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="divTemp">
+    </div>
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <button onclick="myFunction2()">Try it Div Tag</button>
+    <button onclick="myFunction3()">Try it List</button>
+    <button onclick="myFunction4()">Try it Div Tag2</button>
+    <button onclick="myFunction5()">Try it Div Tag3</button>
+</body>
+
+</html>
+<script>
+    function myFunction2() 
+    {
+        let div=document.createElement('div');
+        div.id='content';
+        div.innerHTML='<p>CreateElement example</p>';
+        document.body.appendChild(div);
+    }
+    function myFunction3() 
+    {
+        var node=document.createElement("LI");
+        var value=prompt("Enter value =>");
+        var textnode=document.createTextNode(value);
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+    }
+    function myFunction4() 
+    {
+        let div2=document.createElement('div2');
+        div2.id='contentInside';
+        div2.innerHTML='<p>I am inner one tag</p>';
+        document.getElementById("divTemp").appendChild(div2);
+    }
+    function myFunction5() {
+        let div = document.createElement('div');
+        div.id = 'contentnew';
+        let h2 = document.createElement('h2');
+        h2.textContent = 'Add h2 element to the div';
+        div.appendChild(h2);
+        document.body.appendChild(div);
+    }
+</script>

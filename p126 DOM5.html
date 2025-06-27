@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <td>Ahmedabad</td>
+            <td>Baroda</td>
+            <td>Surat</td>
+        </tr>
+        <tr>
+            <td>Mumbai</td>
+            <td>Pune</td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+
+    let td=table.rows[0].cells[1];
+    alert(td);
+    td.style.backgroundColor="red";
+    let data=td.innerHTML;
+    alert(data);
+    td.innerHTML="Delhi";
+
+</script>

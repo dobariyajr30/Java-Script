@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="snake_and_ladder.css">
+</head>
+
+<body>
+    <div class="back_arrow">
+        <a href="../game_index.html">
+            <div class="back_arrow_content">
+                <div>
+                    <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
+                </div>
+                <div>
+                    <p>Back</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="opt_content">
+        <p>Ready to Play?</p>
+        <p style="margin-top: 20px;">Select Game Mode:-</p>
+        <div class="opt">
+            <div class="opt_in">
+                <a href="friend.html" class="atag">
+                    <p class="btn">👥 Challenge a Friend</p>
+                </a>
+            </div>
+            <div class="opt_in">
+                <a href="bot.html">
+                    <p class="btn">
+                        🤖 Play against the Bot
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+  // Select all game links
+  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
+
+  gameLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // stop immediate jump
+
+      // Add fade-out class to body
+      document.body.classList.add('fade-out');
+
+      // Wait for animation to complete (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>

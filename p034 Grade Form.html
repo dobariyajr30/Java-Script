@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p034 Grade Form.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="header">----------------------------------------------------Result----------------------------------------------------</h1>
+    <table border="5">
+        <th colspan="4">~Enter Student Information Here~</th>
+        <tr>
+            <td>Name:-</td>
+            <td><input type="text" id="txtname"></td>
+            <td>Roll Number:-</td>
+            <td><input type="text" id="txtroll"></td>
+        </tr>
+        <tr>
+            <td>Class:-</td>
+            <td><input type="text" id="txtclass"></td>
+            <td>Section:-</td>
+            <td><input type="text" id="txtsection"></td>
+        </tr>
+        <th colspan="4">Enter Your Marks Here~</th>
+        <tr>
+            <td style="width: 1%;">Maths:-</td>
+            <td style="width: 5%;"><input type="text" id="txtmaths"></td>
+            <td style="width: 1%;">Science:-</td>
+            <td style="width: 5%;"><input type="text" id="txtsci"></td>
+        </tr>
+        <tr>
+            <td style="width: 1%;">Gujarati:-</td>
+            <td style="width: 5%;"><input type="text" id="txtguj"></td>
+            <td style="width: 1%;">Hindi:-</td>
+            <td style="width: 5%;"><input type="text" id="txthindi"></td>
+        </tr>
+        <tr>
+            <td style="width: 1%;">Social:-</td>
+            <td style="width: 5%;"><input type="text" id="txtsocial"></td>
+            <td style="width: 1%;">Computer:-</td>
+            <td style="width: 5%;"><input type="text" id="txtcomp"></td>
+        </tr>
+    </table>
+    <input class="reult_button" type="button" value="Get Your Result"  id="btn">
+    <table class="table_second" border="5">
+        <th colspan="4">
+            ------------------------------------------------Report Card------------------------------------------------
+        </th>
+        <tr></tr>
+        <th colspan="4">~Student Information~</th>
+        <tr>
+            <td colspan="2">Name:- <span id="spnname"></span></td>
+            <td>Roll_Number:- <span id="spnroll"></span></td>
+        </tr>
+        <tr>
+            <td colspan="4">From_Section:-<span id="spnclass"></span> </td>
+        </tr>
+        <tr>
+            <td>Total:- <Span id="spntotal"></Span></td>
+            <td>Percantage:- <Span id="spnper"></Span></td>
+            <td>Grade:- <Span id="spngrd"></Span></td>
+            <td>Status:- <Span id="spnstatus"></Span></td>
+
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    let txtname=document.querySelector("#txtname");
+    let txtroll=document.querySelector("#txtroll");
+    let txtclass=document.querySelector("#txtclass");
+    let txtsection=document.querySelector("#txtsection");
+    let txtmaths=document.querySelector("#txtmaths");
+    let txtsci=document.querySelector("#txtsci");
+    let txtguj=document.querySelector("#txtguj");
+    let txthindi=document.querySelector("#txthindi");
+    let txtsocial=document.querySelector("#txtsocial");
+    let txtcomp=document.querySelector("#txtcomp");
+
+    let btn=document.querySelector("#btn");
+    
+    let spnname=document.querySelector("#spnname");
+    let spnroll=document.querySelector("#spnroll");
+    let spnclass=document.querySelector("#spnclass");
+    let spntotal=document.querySelector("#spntotal");
+    let spngrd=document.querySelector("#spngrd");
+    let spnstatus=document.querySelector("#spnstatus");
+    let spnper=document.querySelector("#spnper");
+
+
+    btn.addEventListener("click",()=>
+    {
+        let name=txtname.value;
+        let roll=txtroll.value;
+        let cls=txtclass.value;
+        let section=txtsection.value;
+        let maths=parseInt(txtmaths.value);
+        let sci=parseInt(txtsci.value);
+        let guj=parseInt(txtguj.value);
+        let hindi=parseInt(txthindi.value);
+        let social=parseInt(txtsocial.value);
+        let comp=parseInt(txtcomp.value);  
+        let total,per;
+
+
+        spnname.innerHTML=name;
+        spnroll.innerHTML=roll;
+        spnclass.innerHTML=(cls+"-"+section);
+
+        
+        total=maths+sci+guj+hindi+social+comp;
+        spntotal.innerHTML=(total+"/360");
+
+        per=100*total/360;
+        spnper.innerHTML=(per+"%");
+
+        if(per>=90)
+        {
+            spngrd.innerHTML=`<span class="gr_aa">A+</span><br/>`;
+            spnstatus.innerHTML=`<span class="st_pass">Pass</span><br/>`;
+        }
+        else if(per>=80)
+        {
+            spngrd.innerHTML=`<span class="gr_a">A</span><br/>`;
+            spnstatus.innerHTML=`<span class='st_pass'>Pass</span><br/>`;
+        }
+        else if(per>=70)
+        {
+            spngrd.innerHTML=`<span class="gr_b">B</span><br/>`;
+            spnstatus.innerHTML=`<span class='st_pass'>Pass</span><br/>`;
+        }
+        else if(per>=60)
+        {
+            spngrd.innerHTML=`<span class="gr_c">C</span><br/>`;
+            spnstatus.innerHTML=`<span class='st_pass'>Pass</span><br/>`;
+        }
+        else
+        {
+            spngrd.innerHTML=`<span class="gr_f">F</span><br/>`;
+            spnstatus.innerHTML=`<span class='st_pass'>Fail</span><br/>`;
+        }
+    }
+)
+    
+</script>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="memory_tester.css">
+</head>
+
+<body>
+  <div class="back_arrow">
+    <a href="../game_index.html">
+      <div class="back_arrow_content">
+        <div>
+          <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
+        </div>
+        <div>
+          <p>Back</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="game_content">
+    <h2 class="game_heading">🎯 Test Your Memory: Match the Pairs!</h2>
+    <h2 id="spnwin"></h2>
+    <div class="game_content_in">
+      <table>
+        <tr>
+          <td id="btn1"><img src="img/blank.png" alt=""></td>
+          <td id="btn2"><img src="img/blank.png" alt=""></td>
+          <td id="btn3"><img src="img/blank.png" alt=""></td>
+          <td id="btn4"><img src="img/blank.png" alt=""></td>
+        </tr>
+        <tr>
+          <td id="btn5"><img src="img/blank.png" alt=""></td>
+          <td id="btn6"><img src="img/blank.png" alt=""></td>
+          <td id="btn7"><img src="img/blank.png" alt=""></td>
+          <td id="btn8"><img src="img/blank.png" alt=""></td>
+        </tr>
+        <tr>
+          <td id="btn9"><img src="img/blank.png" alt=""></td>
+          <td id="btn10"><img src="img/blank.png" alt=""></td>
+          <td id="btn11"><img src="img/blank.png" alt=""></td>
+          <td id="btn12"><img src="img/blank.png" alt=""></td>
+        </tr>
+        <tr>
+          <td id="btn13"><img src="img/blank.png" alt=""></td>
+          <td id="btn14"><img src="img/blank.png" alt=""></td>
+          <td id="btn15"><img src="img/blank.png" alt=""></td>
+          <td id="btn16"><img src="img/blank.png" alt=""></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let btn1 = document.querySelector("#btn1");
+  let btn2 = document.querySelector("#btn2");
+  let btn3 = document.querySelector("#btn3");
+  let btn4 = document.querySelector("#btn4");
+  let btn5 = document.querySelector("#btn5");
+  let btn6 = document.querySelector("#btn6");
+  let btn7 = document.querySelector("#btn7");
+  let btn8 = document.querySelector("#btn8");
+  let btn9 = document.querySelector("#btn9");
+  let btn10 = document.querySelector("#btn10");
+  let btn11 = document.querySelector("#btn11");
+  let btn12 = document.querySelector("#btn12");
+  let btn13 = document.querySelector("#btn13");
+  let btn14 = document.querySelector("#btn14");
+  let btn15 = document.querySelector("#btn15");
+  let btn16 = document.querySelector("#btn16");
+
+  let spnwin=document.querySelector("#spnwin");
+  let game_over=0;
+
+  let opn = []
+  let cnt = 0;
+  let move=0;
+
+  for (i=0; i<=16; i++) 
+  {
+    opn[i] = null;
+  } 
+
+
+  btn1.addEventListener("click", () => {
+    btn1.querySelector("img").src = "img/m7.png";
+    opn1 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn2.addEventListener("click", () => {
+    btn2.querySelector("img").src = "img/m4.png";
+    opn2 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn3.addEventListener("click", () => {
+    btn3.querySelector("img").src = "img/m2.png";
+    opn3 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn4.addEventListener("click", () => {
+    btn4.querySelector("img").src = "img/m5.png";
+    opn4 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn5.addEventListener("click", () => {
+    btn5.querySelector("img").src = "img/m6.png";
+    opn5 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn6.addEventListener("click", () => {
+    btn6.querySelector("img").src = "img/m8.png";
+    opn6 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn7.addEventListener("click", () => {
+    btn7.querySelector("img").src = "img/m3.png";
+    opn7 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn8.addEventListener("click", () => {
+    btn8.querySelector("img").src = "img/m1.png";
+    opn8 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn9.addEventListener("click", () => {
+    btn9.querySelector("img").src = "img/m3.png";
+    opn9 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn10.addEventListener("click", () => {
+    btn10.querySelector("img").src = "img/m7.png";
+    opn10 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn11.addEventListener("click", () => {
+    btn11.querySelector("img").src = "img/m6.png";
+    opn11 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn12.addEventListener("click", () => {
+    btn12.querySelector("img").src = "img/m2.png";
+    opn12 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn13.addEventListener("click", () => {
+    btn13.querySelector("img").src = "img/m1.png";
+    opn13=1;
+    cnt++;
+    card_rev();
+  });
+
+  btn14.addEventListener("click", () => {
+    btn14.querySelector("img").src = "img/m4.png";
+    opn14 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn15.addEventListener("click", () => {
+    btn15.querySelector("img").src = "img/m8.png";
+    opn15 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  btn16.addEventListener("click", () => {
+    btn16.querySelector("img").src = "img/m5.png";
+    opn16 = 1;
+    cnt++;
+    card_rev();
+  });
+
+  function card_rev()
+  {
+    if (cnt == 2) 
+    {
+      move++;
+
+      if (opn1 == 1 && opn10 == 1)
+      {
+
+        setTimeout(() => {
+          btn1.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn10.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if (opn2 == 1 && opn14 == 1)
+      {
+        setTimeout(() => {
+          btn2.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn14.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if (opn3 == 1 && opn12 == 1) {
+        setTimeout(() => {
+          btn3.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn12.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if (opn4 == 1 && opn16 == 1) {
+        setTimeout(() => {
+          btn4.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn16.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if (opn5 == 1 && opn11 == 1) {
+        setTimeout(() => {
+          btn5.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn11.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if (opn6 == 1 && opn15 == 1) {
+        setTimeout(() => {
+          btn6.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn15.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if (opn7 == 1 && opn9 == 1) {
+        setTimeout(() => {
+          btn7.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn9.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      else if(opn8 == 1 && opn13  ==1) {
+        setTimeout(() => {
+          btn8.style.visibility = "hidden";
+        }, 1200);
+        setTimeout(() => {
+          btn13.style.visibility = "hidden";
+        }, 1200);
+        game_over++;
+      }
+      
+      if (game_over===8)
+      { 
+        spnwin.className = "score_display";
+        spnwin.innerHTML = `🎉 Great job! You completed the game. 🎯`;
+      }
+
+      
+    }
+    else if (cnt==3)
+    {
+      for (i=1; i<=16; i++) 
+      {
+        window["btn"+i].querySelector("img").src="img/blank.png";
+        window["opn"+i]= 0;
+      }
+      cnt = 0;
+    }
+
+    
+  }
+
+</script>
+
+<script>
+  // Select all game links
+  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
+
+  gameLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // stop immediate jump
+
+      // Add fade-out class to body
+      document.body.classList.add('fade-out');
+
+      // Wait for animation to complete (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>

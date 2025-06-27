@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p066 Sign Up Page.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="left"></div>
+        <div class="right">
+            <div class="right_inner_box">
+                <h1 class="right_inner_box_header">Creat New Account</h1>
+                <div class="right_inner_box_form">
+                    <div class="right_inner_box_name">
+                        <input type="text" class="input_name" placeholder="Name.." id="txtname">
+                    </div>
+                    
+                    <div class="right_inner_box_name">
+                        <input type="text" class="input_name" placeholder="Email.." id="txtmail">
+                    </div>
+
+                    <div class="right_inner_box_name">
+                        <input type="text" class="input_name" placeholder="Username.." id="txtuser">
+                    </div>
+                    <div class="right_inner_box_name">
+                        <textarea name="" placeholder="Address..." class="input_name" id="txtadd"></textarea>
+                    </div>
+
+                    <div class="right_inner_box_name">
+                        <input type="password" class="input_name" placeholder="Enter Password..." id="txtpass">
+                    </div>
+
+                    <div class="right_inner_box_name">
+                        <input type="password" class="input_name" placeholder="Re-Enter Password..." id="txtrepass">
+                    </div>
+                   
+                    <div class="btnsub">
+                        <input type="button" value="SUBMIT" id="btnsub" class="btnsub_in">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let txtname=document.querySelector("#txtname");
+    let txtmail=document.querySelector("#txtmail");
+    let txtuser=document.querySelector("#txtuser");
+    let txtpass=document.querySelector("#txtpass");
+    let txtadd=document.querySelector("#txtadd");
+    let txtrepass=document.querySelector("#txtrepass");
+    let btnsub=document.querySelector("#btnsub");
+
+    
+    btnsub.addEventListener("click",()=>
+    {
+        if(txtname.value=="")
+        {
+            txtname.style.color = "red";
+            txtname.style.border = "2px solid red";
+        }
+        else{
+            txtname.style.color = "";
+            txtname.style.border = "";
+        }
+
+        
+        if(txtmail.value=="")
+        {
+            txtmail.style.color = "red";
+            txtmail.style.border = "2px solid red";
+        }
+        else{
+            txtmail.style.color = "";
+            txtmail.style.border = "";
+        }
+
+        
+        if(txtuser.value=="")
+        {
+            txtuser.style.color = "red";
+            txtuser.style.border = "2px solid red";
+        }
+        else{
+            txtuser .style.color = "";
+            txtuser.style.border = "";
+        }
+
+        
+        if(txtpass.value=="")
+        {
+            txtpass.style.color = "red";
+            txtpass.style.border = "2px solid red";
+        }
+        else{
+            txtpass .style.color = "";
+            txtpass.style.border = "";
+        }
+
+        if(txtrepass.value=="")
+        {
+            txtrepass.style.color = "red";
+            txtrepass.style.border = "2px solid red";
+        }
+        else{
+            txtrepass.style.color="";
+            txtrepass.style.border="";
+        }
+        if(txtrepass.value!=txtpass.value)
+        {
+            alert("Password Does Not match with enterd password");
+        }
+
+        if(txtadd.value=="")
+        {
+            txtadd.style.color = "red";
+            txtadd.style.border = "2px solid red";
+        }
+        else{
+            txtadd.style.color="";
+            txtadd.style.border="";
+        }
+
+        let l=txtadd.value.length;
+
+        if(l>50)
+        {
+            alert("You have two many charcaters in Address");
+        }
+    })
+</script>

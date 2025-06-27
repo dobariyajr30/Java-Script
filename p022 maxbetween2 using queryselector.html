@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter 1st Number: <input type="text" id="txtno1">
+    <br>
+    <br>
+    Enter 2nd Number: <input type="text" id="txtno2">
+    <br>
+    <br>
+    <input type="button" value="Calculate" id="btnans">
+    <br>
+    The Max Value Between 3 is: <span id="spanmaxans"></span>
+
+    <script>
+        let txtno1 = document.querySelector("#txtno1");
+        let txtno2 = document.querySelector("#txtno2");
+        let spanmaxans = document.querySelector("#spanmaxans");
+        let btnans = document.querySelector("#btnans");
+
+        btnans.addEventListener
+            ("click",()=>{
+                let no1=parseInt(txtno1.value); // Retrieve and parse the value of txtno1
+                let no2=parseInt(txtno2.value); // Retrieve and parse the value of txtno2
+
+                if (no1 > no2) {
+                    spanmaxans.innerHTML = "No1";
+                } else if (no1 < no2) {
+                    spanmaxans.innerHTML = "No2";
+                } else {
+                    spanmaxans.innerHTML = "Both numbers are equal.";
+                }
+            }
+            );
+    </script>
+</body>
+
+</html>

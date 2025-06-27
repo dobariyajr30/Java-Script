@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span id="spandata"></span>
+</body>
+
+</html>
+<script>
+    let biodata= 
+    {
+        myname: {
+            firstname: "shyam",
+            lastname: "chawda"
+        },
+        myage: 39,
+        city: "Ahmedabad",
+        contactno: 7874391191,
+        "likes birds": true,
+    };
+
+    let fname = biodata.myname.firstname;
+    let lastname = biodata.myname.lastname;
+    let myage = biodata.myage;
+    let birds = biodata["likes birds"];
+    let merge = fname + "<br>" + lastname + "<br>" + myage + "<br>" + birds;
+    document.getElementById("spandata").innerHTML = merge;
+
+    alert(biodata["myage"]);
+
+    let key = prompt("What do you want to know about the user?", "name");
+    alert(biodata[key]);
+    // access by variable
+</script>

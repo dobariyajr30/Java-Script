@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Music player.css">
+</head>
+<body>
+    <div class="card">
+        <!-- Toppeer Start -->
+        <div class="topper">
+            <div class="topper_left">
+                <img src="IMG/angle-left-solid.png" class="topper_left_in">
+            </div>
+            <div class="topper_right"> 
+                <img src="IMG/bars-solid.png" class="topper_right_in">
+            </div>
+        </div>
+        <!-- Toppeer End -->
+        <!-- Description Start -->
+         <div class="dis">
+            <img src="IMG/Music Poster.jpg" alt="" class="dis_img">
+            <h1 class="dis_h">Ishq Hai</h1>
+            <p class="dis_p">Anurag Saikia, Raj Shekhar</p>
+        </div>
+        <!-- Description End -->
+        <!-- Progress Start -->
+        <audio  id="song">
+            <source src="Ishq Hai_192(Ghantalele.com).mp3">
+        </audio><br>
+         <div class="audio_bar">
+            <input type="range" id="pro_bar" min="0" max="100" value="0">
+        </div>
+        <!-- Progress  End -->
+        <!-- Controls  Start -->
+         <div class="control">
+            <div><img src="IMG/backward-solid.png" alt="" class="control_btn"></div>
+            <div onclick="start_stop()"><img src="IMG/play-solid.png" alt="" class="control_btn" id="ply_icon"></div>
+            <div><img src="IMG/forward-solid.png" alt="" class="control_btn"></div>
+         </div>
+        <!-- Controls  End -->
+    </div>
+</body>
+</html>
+<script>
+    let pro_bar=document.querySelector("#pro_bar");
+    let song=document.querySelector("#song");
+    let ply_icon=document.querySelector("#ply_icon");
+
+    song.onloadedmetadata=function()
+    {
+        pro_bar.max=song.duration   ;
+        pro_bar.value=0; 
+    }
+
+    function start_stop()
+    {
+        if(song.paused || song.ended)
+        {
+            song.play();
+            ply_icon.src="IMG/pause-solid.png";
+        }
+        else
+        {
+            song.pause();
+            ply_icon.src="IMG/play-solid.png";
+        }
+    }
+
+    setInterval(()=>
+    {
+        pro_bar.value=song.currentTime;
+    },500);
+
+    pro_bar.onchange=function()
+    {
+        song.currentTime=pro_bar.value;
+    }
+</script>

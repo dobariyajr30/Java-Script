@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    class std{
+        constructor(name,no)
+        {
+            this.name=name;
+            this.no=no;
+        }
+        printdata()
+        {
+            document.writeln(`No=${this.no} Name= ${this.name}`)
+        }
+    };
+
+    class marks extends std
+    {
+        constructor(name,no,eng,guj,sci,maths)
+        {
+            super(name,no);
+            this.eng=eng;
+            this.guj=guj;
+            this.sci=sci;
+            this.maths=maths;
+        }
+        printmarks()
+        {
+            document.writeln(`<br>English Marks=> ${this.eng}`);
+            document.writeln(`<br>Gujarati Marks=> ${this.guj}`);
+            document.writeln(`<br>Science Marks=> ${this.sci}`);
+            document.writeln(`<br>Maths Marks=> ${this.maths}`);
+        }
+    };
+
+    class result extends marks
+    {
+        constructor(name,no,eng,guj,sci,maths,total)
+        {
+            super(name,no,eng,guj,sci,maths)
+            this.total=total;
+        }
+
+        printdataresult()
+        {
+            this.total=this.guj+this.eng+this.maths+this.sci;
+            document.writeln(`<br>Total=${this.total}`);
+        }
+    };
+
+    let r1=new result("Sujal",32,45,45,34,24);
+    r1.printdata();
+    r1.printmarks();
+    r1.printdataresult();
+</script>

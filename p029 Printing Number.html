@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~Let's Print Number~
+    <br><br>
+    Enter Limit Upto where you have to print: <input type="text" id="txtlim">
+    <br><br>
+    <input type="button" value="PRINT" id="btnpr">
+    <br><br>
+    <span id="spnpr"></span>    
+</body>
+</html>
+<script>
+    let txtlim=document.querySelector('#txtlim');
+    let btnpr=document.querySelector('#btnpr');
+    let spnpr=document.querySelector("#spnpr");
+
+    btnpr.addEventListener("click",()=>
+    {
+        let lim=parseInt(txtlim.value);
+        let i=1;
+        let str="";
+
+        do
+        {
+            str+=(i+"<br/>");
+            i++;
+        }
+        while(i<=lim)
+        spnpr.innerHTML=str;
+    }
+)
+
+</script>

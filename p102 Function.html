@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Demo: Java Script Object</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+</body>
+</html>
+<script>
+    var person={
+        firstname:"Jam",
+        lastname:"Son",
+        age:34,
+
+        getFullName:function()
+        {
+            return this.firstname+" "+this.lastname
+        }
+    };
+
+    document.getElementById("p1").innerHTML=person.firstName;
+    document.getElementById("p2").innerHTML=person.lastName;
+    document.getElementById("p3").innerHTML=person["firstName"];
+    document.getElementById("p4").innerHTML=person["lastName"];
+    document.getElementById("p5").innerHTML=person.getFullName();
+</script>

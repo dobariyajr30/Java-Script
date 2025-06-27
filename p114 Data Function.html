@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    let now = new Date();
+    document.writeln("<br>");
+    document.writeln("Current Date and Time: " + now + "<br>");
+
+    // Get individual date components
+    document.writeln("<br>");
+    document.writeln("Year: " + now.getFullYear() + "<br>"); 
+    document.writeln("Month (0-11): " + now.getMonth() + "<br>");
+    document.writeln("Date: " + now.getDate() + "<br>");
+    document.writeln("Day (0-6): " + now.getDay() + "<br>");
+    document.writeln("Hours: " + now.getHours() + "<br>");
+    document.writeln("Minutes: " + now.getMinutes() + "<br>"); 
+    document.writeln("Seconds: " + now.getSeconds() + "<br>");
+    document.writeln("Milliseconds: " + now.getMilliseconds() + "<br>");
+
+    // Modify date components
+    let modifiedDate = new Date();
+    modifiedDate.setFullYear(2025);
+    modifiedDate.setMonth(11);
+    modifiedDate.setDate(25);
+    document.writeln("<br>");
+    document.writeln("Modified Date: " + modifiedDate + "<br>");
+
+    // Parse date strings
+    let parsedDate=new Date("2024-12-31T15:00:00");
+    document.writeln("<br>");
+    document.writeln("Parsed Date: " + parsedDate + "<br>");
+
+    // Date calculations
+    document.writeln("<br>");
+    let tomorrow=new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    document.writeln("Tomorrow: " + tomorrow + "<br>");
+
+    let lastWeek=new Date();
+    lastWeek.setDate(lastWeek.getDate() - 7); // Subtract 7 days
+    document.writeln("Last Week: " + lastWeek + "<br>");
+</script>

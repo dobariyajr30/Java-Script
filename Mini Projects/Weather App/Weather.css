@@ -1,0 +1,83 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #222;
+    display: flex;
+    justify-content: center;
+}
+.card{
+    width: 600px; 
+    height: 700px;
+    border-radius: 3cap;
+    background: linear-gradient(135deg, #1b0141, #09003a, #310030, #2c001c, #5b0246);
+    color: white;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+.card_in{
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search{
+    display: flex;
+}
+.search{
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 4cap;
+    padding: 2%;
+}
+.txtin{
+    border: none;
+    width: 350px;
+    height: 35px;
+    outline: none;
+    font-size: 150%;
+}
+.srebtn{
+    width: 30px;
+}
+.wt_img{
+    width: 150px;
+    margin-top: 10%;
+}
+.txtdeg{
+    font-size: 80px;
+}
+.txtcity{
+    font-size: 55px;
+    text-decoration: underline;
+}
+.bottom{
+    margin-top: 10%;
+    width: 550px;
+    
+}
+.bottom_in{
+    display: flex;
+}
+.humidity{
+    display: flex;
+    margin-right: 20%;
+}
+.humidity_in_second{
+    font-size: 120%;
+    margin-left: 8%;    
+}
+.humidity_deg{
+    font-size: 140%;
+}
+.humidity_name{
+    margin-top: -5%;
+}
+.wssp{
+    display: flex;
+    width: 600px;
+}

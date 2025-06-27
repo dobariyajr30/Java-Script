@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img_sec img{
+            width: 8%;
+        }
+        .btnvrf{
+            margin-left: 20%;
+            background-color: #1A73E8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Image With</h2>
+    <h1><b>Bus</b></h1>
+    <h2>Click verify once there are none left </h2>
+    <div class="img_sec">
+        <img src="img/CAPTCHA/bus1.jpg" id="img1">
+        <img src="img/CAPTCHA/r1.jpg" id="img2">
+        <img src="img/CAPTCHA/r2.jpg" id="img3">
+        <br>
+        <img src="img/CAPTCHA/r3.jpg" id="img4">
+        <img src="img/CAPTCHA/r4.jpg" id="img5">
+        <img src="img/CAPTCHA/bus2.jpg" id="img6">
+        <br>
+        <img src="img/CAPTCHA/r5.jpg" id="img7">
+        <img src="img/CAPTCHA/bus3.jpg" id="img8">
+        <img src="img/CAPTCHA/r6.jpg" id="img9">
+    </div>
+    <br>
+    <input type="button" value="VERIFY" id="btnvrf" class="btnvrf">
+    <br>
+    <h2><span id="spnans"></span></h2>
+</body>
+</html>
+<script>
+
+    let i;
+    let img=new Array(10);
+    c=0;
+    for(i=1; i<=9; i++)
+    {
+        img[i]=document.querySelector(`#img${i}`);
+
+    }
+
+    let btnvrf=document.querySelector("#btnvrf");
+    let spnans=document.querySelector("#spnans");
+
+    
+    img1.addEventListener("click",()=>
+    {
+        img1.src="img/CAPTCHA/right.jpg";
+        c++;
+    })
+    img2.addEventListener("click",()=>
+    {
+        img2.src="img/CAPTCHA/right.jpg";
+        c--;
+    })
+    img3.addEventListener("click",()=>
+    {
+        img3.src="img/CAPTCHA/right.jpg";
+        c--;
+    })
+    img4.addEventListener("click",()=>
+    {
+        img4.src="img/CAPTCHA/right.jpg";
+        c--;
+    })
+    img5.addEventListener("click",()=>
+    {
+        img5.src="img/CAPTCHA/right.jpg";
+        c--;
+    })
+    img6.addEventListener("click",()=>
+    {
+        img6.src="img/CAPTCHA/right.jpg";
+        c++; 
+    })
+    img7.addEventListener("click",()=>
+    {
+        img7.src="img/CAPTCHA/right.jpg";
+        c--;
+    })
+    img8.addEventListener("click",()=>  
+    {
+        img8.src="img/CAPTCHA/right.jpg";
+        c++;
+    })
+    img9.addEventListener("click",()=>
+    {
+        img9.src="img/CAPTCHA/right.jpg";
+        c--;
+    })
+
+    btnvrf.addEventListener("click",()=>
+    {
+        
+        if(c==3)
+        {
+            spnans.innerHTML="You are Normal Human being";
+        }
+        else
+        {
+            spnans.innerHTML="You are Dangerous Machine";   
+        }
+    })
+    
+
+</script>

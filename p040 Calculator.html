@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p40 Calculator.css">
+    <title>Document</title>
+</head>
+<body style="font-size: 200%;">
+    <h1>~Calculator~</h1>
+    <table border="5" style="width: 50%;">
+        <tr>
+            <td colspan="4" style="width: 120%; height: 50px;"><span id="spninput"></span></td>
+        </tr>
+        <tr>
+            <td id="txt7" style="width: 20%;">7</td>
+            <td id="txt8">8</td>
+            <td id="txt9">9</td>
+            <td id="txt÷"><input type="button" value="÷" id="txtdiv"></td>
+        </tr>       
+        <tr>
+            <td id="txt4">4</td>
+            <td id="txt5">5</td>
+            <td id="txt6">6</td>
+            <td id="txtX"><input type="button" value="X" id="txtmul"></td>
+        </tr>       
+        <tr>
+            <td id="txt1">1</td>
+            <td id="txt2">2</td>
+            <td id="txt3">3</td>
+            <td id="txt-"><input type="button" value="-" id="txtsub"></td>
+        </tr>       
+        <tr>
+            <td id="txt0" colspan="2">0</td>
+            <td id="txt="><input type="button" value="=" id="txteq"></td>
+            <td id="txt+"><input type="button" value="+" id="txtsum"></td>
+        </tr>       
+    </table>
+    <input type="button" value="Clear" id="txtclr">
+</body>
+</html>
+<script>
+    let spninput=document.querySelector("#spninput");
+    let btn=document.querySelectorAll("td");
+    let txtclr=document.querySelector("#txtclr");
+    let txtdiv=document.querySelector("#txtdiv");
+    let txtmul=document.querySelector("#txtmul");
+    let txtsum=document.querySelector("#txtsum");
+    let txtsub=document.querySelector("#txtsub");
+    let txteq=document.querySelector("#txteq");
+    
+
+    btn.forEach(button =>
+    {   
+        button.addEventListener("click",()=>
+        {
+            let value=button.innerText;
+            spninput.innerHTML+=value; 
+        }
+        )
+        
+    });
+
+    txtdiv.addEventListener("click",()=>
+    {
+        spninput.innerHTML+="/";
+    }
+    )
+      
+
+    txtsum.addEventListener("click",()=>
+    {
+        spninput.innerHTML+="+";
+    }
+    )
+      
+
+    txtsub.addEventListener("click",()=>
+    {
+        spninput.innerHTML+="-";
+    }
+    )
+      
+
+    txtmul.addEventListener("click",()=>
+    {
+        spninput.innerHTML+="*";
+    }
+    )
+       
+
+    txteq.addEventListener("click",()=>
+    {
+        spninput.innerHTML=eval(spninput.innerHTML);
+    }
+    )
+
+    txtclr.addEventListener("click",()=>
+    {
+        spninput.innerHTML="";
+    }
+    )
+</script>

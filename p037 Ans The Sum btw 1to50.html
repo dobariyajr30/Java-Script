@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Let's Check your skills~</h1>
+    <br>
+    <input type="button" value="Generate" id="btngen">
+    <br><br>
+    1st Digit is: <span id="spnno1"></span>
+    <br><br>    
+    2nd Digit is: <span id="spnno2"></span>
+    <br><br>
+    Enter the sum of above digit: <input type="text" id="txtsum">
+    <br><br>
+
+    <input type="button" value="Check" name="" id="btnch">
+    <br><br>
+    <span id="spnans"></span>
+    <br>
+
+    <span id="spncnt"></span> this many times you have use the Generator.<br><br>
+    <span id="spncntr"></span>=Right Answer;<br>
+    <span id="spncntw"></span> =Wrong Answer;<br>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spnno1=document.querySelector("#spnno1");
+    let spnno2=document.querySelector("#spnno2");
+
+    let txtsum=document.querySelector("#txtsum");
+    let spnans=document.querySelector("#spnans");
+    let btnch=document.querySelector("#btnch");
+
+    let spncnt=document.querySelector("#spncnt");
+    let spncntw=document.querySelector("#spncntw");
+    let spncntr=document.querySelector("#spncntr");
+    let c=0,cr=0,cw=0;
+
+    btngen.addEventListener("click",()=>
+    {
+        spnno1.innerHTML=(Math.floor(Math.random()*50)+1);
+        spnno2.innerHTML=(Math.floor(Math.random()*50)+1);
+    })
+    btnch.addEventListener("click",()=>
+    {
+        let no1=parseInt(spnno1.innerHTML);
+        let no2=parseInt(spnno2.innerHTML);
+        let total=no1+no2;
+        let sum=parseInt(txtsum.value);
+
+        if(sum==total)
+        {
+            spnans.innerHTML="Right Answer";
+            cr++;
+        }
+        else
+        {
+            spnans.innerHTML="Wrong Answer";
+            cw++;
+        }
+        c++;
+        spncnt.innerHTML=c;
+        spncntr.innerHTML=cr;
+        spncntw.innerHTML=cw;
+
+        if(spncntw.innerHTML==7)
+        {
+            alert("You can not play anymore");
+        }
+    })
+    
+
+</script>

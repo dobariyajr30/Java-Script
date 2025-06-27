@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Date And Time~</h1>
+    <br><br>
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>
+    Time:=<span id="spntm"></span>
+    <br><br>
+    Date:=<span id="spndt"></span>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spntm=document.querySelector("#spntm");
+    let spndt=document.querySelector("#spndt");
+    let date=new Date();
+
+    btngen.addEventListener("click",()=>
+    {
+        spntm.innerHTML="";
+        spntm.innerHTML+=" "+date.getHours(); 
+        spntm.innerHTML+=" "+date.getMinutes();
+        spntm.innerHTML+=" "+date.getMilliseconds();
+
+        spndt.innerHTML="";
+        spndt.innerHTML+=" "+(date.getDay()+1);
+        spndt.innerHTML+=" "+date.getMonth();
+        spndt.innerHTML+=" "+date.getFullYear();
+
+    })
+</script>   

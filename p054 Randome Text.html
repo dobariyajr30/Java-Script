@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Generat" id="btngen">
+    <br><br>
+    <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spnans=document.querySelector("#spnans");
+    let i;
+    const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    let  chars_l=chars.length;
+
+    btngen.addEventListener("click",()=>
+    {
+        spnans.innerHTML=""; 
+        for(i=0; i<5; i++) 
+        {
+            spnans.innerHTML+=chars.charAt(Math.floor(Math.random()*chars_l));
+        }
+    }
+    )
+
+</script>

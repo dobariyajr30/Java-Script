@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #spnsr {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>    
+</head>
+<body>
+    ~Let's See Fibinaci Series~
+    <br><br>
+    Enter Limit Here: <input type="text"  id="txtlim">
+    <br><br>
+    <input type="button" value="CHECK" id="btnch">
+    <br><br>
+    Series: <span id="spnsr"></span>
+    <br><br>
+</body>
+</html>
+<script>
+    let txtlim=document.querySelector("#txtlim");
+    let btnch=document.querySelector("#btnch");
+    let spnsr=document.querySelector("#spnsr");
+
+    btnch.addEventListener("click",()=>
+    {
+        let lim=parseInt(txtlim.value);
+        let no1=0,no2=1,no3,i;
+        let str="";
+
+        alert(txtlim.value);
+
+        for(i=0; i<lim; i++)
+        {
+            str+=(no1+" ")
+            no3=no1+no2;   
+            no1=no2;
+            no2=no3;                     
+        }       
+        spnsr.innerHTML=(str);
+    }
+    )
+
+</script>

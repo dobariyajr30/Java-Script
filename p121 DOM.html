@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello</h1>
+    <p>
+        This is first Para Graph
+    </p>
+    <ul>
+        <li>Ahmedabad</li>
+        <li>Mumbai</li>
+    </ul>
+    <h3>Developed by </h3>
+</body>
+</html>
+<script>
+    alert("From BODY: " + document.body);
+    alert("From document Element: " + document.documentElement);
+    alert("From Head: " + document.head);
+    let nodename1 = document.body.nodeName;
+    alert(nodename1);
+    let nodename2 = document.body.firstElementChild.nodeName;
+    alert(nodename2);
+    let nodename3 = document.body.lastElementChild.nodeName;
+    alert(nodename3);
+    let nodename4 = document.body.firstElementChild.nextElementSibling
+        .nodeName;
+    alert(nodename4);
+    let lang = document.documentElement.getAttribute("lang");
+    let nodename = document.head.firstElementChild.nodeName;
+    alert(lang);
+    alert(nodename);
+</script>

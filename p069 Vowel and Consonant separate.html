@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 200%;">
+
+    <input type="text" id="txt">
+    <span id="spn"></span>
+    <br>
+    Vowel:-<span id="spnv"></span>
+    <br>
+    Consonant:-<span id="spnc"></span>  
+    <br>
+    All:-<span id="spnall"></span>  
+    
+</body>
+</html>
+
+<script>
+    let spn=document.querySelector("#spn");
+    let spnv=document.querySelector("#spnv");
+    let spnc=document.querySelector("#spnc");
+    let spnall=document.querySelector("#spnall");
+    let txt=document.querySelector("#txt");
+
+    function handleKeypress(event) 
+    {
+        let key=event.key;
+        let asciiValue=event.charCode||event.keyCode;
+
+        spn.innerHTML=`You pressed "${key}" with ASCII value: ${asciiValue}`;
+
+        if(key=='A' || key=='a' ||key=='E' || key=='e' ||key=='i' || key=='I' ||key=='o' || key=='O' ||key=='u' || key=='U')
+        {
+            spnv.innerHTML+=`${key}`;
+        }
+        else
+        {
+            spnc.innerHTML+=`${key}`;
+        }
+
+        spnall.innerHTML+=`${key}`;
+
+    } 
+
+    txt.addEventListener("keypress", handleKeypress);
+</script>

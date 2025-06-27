@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Time~</h1>
+    <br><br>
+    Hours:= <span id="spnhr"></span>
+    <br>
+    Minute:= <span id="spnmin"></span>
+    <br>
+    Status:= <span id="spnst"></span>
+    <br>
+    <input type="button" value="Genrate" id="btngen">
+</body>
+</html>
+<script>
+    let spnhr=document.querySelector("#spnhr");
+    let spnmin=document.querySelector("#spnmin");
+    let spnst=document.querySelector("#spnst");
+    let btngen=document.querySelector("#btngen");
+
+    let date=new Date();
+
+    btngen.addEventListener("click",()=>
+    {
+        spnhr.innerHTML=date.getHours();
+        spnmin.innerHTML=date.getMinutes();
+
+        if(spnhr.innerHTML>=12)
+        {
+            spnst.innerHTML="PM";
+        }
+        else
+        {
+            spnst.innerHTML="AM";
+        }
+    })
+
+
+
+</script>

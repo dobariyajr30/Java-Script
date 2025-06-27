@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input_div">
+        Name:= <input type="text" id="txtname"> <br>
+        Phone:= <input type="text" id="txtph"> <br>
+        Email:= <input type="text" id="txtem"> <br>
+        <input type="button" value="SUBMIT" id="btn_sub">
+    </div>
+    <div class="btns" style="margin-top: 3%;">
+        <input type="button" value="Show Data" id="btn_show">
+        <input type="button" value="Delete Data" id="btn_del">
+    </div>
+    <span id="spn"></span>
+</body>
+</html>
+<script>
+    let txtname=document.querySelector("#txtname");
+    let txtph=document.querySelector("#txtph");
+    let txtem=document.querySelector("#txtem");
+    let btn_sub=document.querySelector("#btn_sub");
+
+    let btn_show=document.querySelector("#btn_show");
+    let btn_del=document.querySelector("#btn_del");
+    let spn=document.querySelector("#spn");
+
+    btn_sub.addEventListener("click",(event_thay)=>
+    {
+        event_thay.preventDefault();
+        localStorage.setItem("Names",txtname.value);
+        localStorage.setItem("Email",txtem.value);
+        localStorage.setItem("Phone",txtph .value);
+
+        txtname.value="";
+        txtem.value="";
+        txtph.value="";
+    })   
+
+    btn_del.addEventListener("click",()=>
+    {
+        localStorage.clear();
+        // localStorage.removeItem('name'); which just specifically remove name
+    })
+
+    btn_show.addEventListener("click",()=>
+    {
+        let name=localStorage.getItem('Names');
+        let email=localStorage.getItem('Email');
+        let phone=localStorage.getItem('Phone');
+
+        let html=`Name=${name}<br>Email=${email}<br>Phone=${phone}<br><br>  `;
+
+        spn.insertAdjacentHTML("afterbegin", html);
+
+    })
+
+</script>

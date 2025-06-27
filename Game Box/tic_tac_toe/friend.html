@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="tic_tac_toe.css">
+</head>
+
+<body>
+  <div class="back_arrow">
+    <a href="opt.html">
+      <div class="back_arrow_content">
+        <div>
+          <img class="back_arrow_in" src="img/Back Arrow.png" alt="">
+        </div>
+        <div>
+          <p>Back</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="frd_content">
+    <div class="frd_content_in">
+      <table border="5" class="frd_content_in_table">
+        <tr>
+          <td id="btn1"></td>
+          <td id="btn2"></td>
+          <td id="btn3"></td>
+        </tr>
+        <tr>
+          <td id="btn4"></td>
+          <td id="btn5"></td>
+          <td id="btn6"></td>
+        </tr>
+        <tr>
+          <td id="btn7"></td>
+          <td id="btn8"></td>
+          <td id="btn9"></td>
+        </tr>
+      </table>
+    </div>
+    <span class="spn_frd_status" id="spn_frd_status"></span>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let btn1=document.querySelector("#btn1");
+  let btn2=document.querySelector("#btn2");
+  let btn3=document.querySelector("#btn3");
+  let btn4=document.querySelector("#btn4");
+  let btn5=document.querySelector("#btn5");
+  let btn6=document.querySelector("#btn6");
+  let btn7=document.querySelector("#btn7");
+  let btn8=document.querySelector("#btn8");
+  let btn9=document.querySelector("#btn9");
+  let spnwin=document.querySelector("#spn_frd_status");
+
+  let cnt=0;
+  let gameOver = false;
+
+  btn1.addEventListener("click",()=>{
+    if (btn1.textContent !== "" || gameOver) return;    
+    if(cnt%2==0)
+    {
+      btn1.textContent="X";
+    }
+    else{
+      btn1.textContent="O";
+    }
+    cnt++;
+     btn1.disabled = true;
+     iswinner();
+  });
+  btn2.addEventListener("click",()=>{
+    if (btn2.textContent !== "" || gameOver) return;
+    
+    if(cnt%2==0)
+    {
+      btn2.textContent="X";
+    }
+    else{
+      btn2.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn3.addEventListener("click",()=>{
+    if (btn3.textContent !== "" || gameOver) return;
+    if(cnt%2==0)
+    {
+      btn3.textContent="X";
+    }
+    else{
+      btn3.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn4.addEventListener("click",()=>{
+    if (btn4.textContent !== "" || gameOver) return;
+    
+    if(cnt%2==0)
+    {
+      btn4.textContent="X";
+    }
+    else{
+      btn4.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn5.addEventListener("click",()=>{
+    if (btn5.textContent !== "" || gameOver) return;
+    if(cnt%2==0)
+    {
+      btn5.textContent="X";
+    }
+    else{
+      btn5.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn6.addEventListener("click",()=>{
+    if (btn6.textContent !== "" || gameOver) return;
+    
+    if(cnt%2==0)
+    {
+      btn6.textContent="X";
+    }
+    else{
+      btn6.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn7.addEventListener("click",()=>{
+    if (btn7.textContent !== "" || gameOver) return;
+    
+    if(cnt%2==0)
+    {
+      btn7.textContent="X";
+    }
+    else{
+      btn7.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn8.addEventListener("click",()=>{
+    if (btn8.textContent !== "" || gameOver) return;
+    
+    if(cnt%2==0)
+    {
+      btn8.textContent="X";
+    }
+    else{
+      btn8.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+  btn9.addEventListener("click",()=>{
+    if (btn9.textContent !== "" || gameOver) return;
+    
+    if(cnt%2==0)
+    {
+      btn9.textContent="X";
+    }
+    else{
+      btn9.textContent="O";
+    }
+    cnt++;
+    iswinner();
+  });
+
+  function iswinner()
+  {
+        //for 1 button
+        if(btn1.textContent !== "" && btn1.textContent==btn2.textContent && btn1.textContent==btn3.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn1.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        else if(btn1.textContent !== "" && btn1.textContent==btn4.textContent && btn1.textContent==btn7.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn1.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        else if(btn1.textContent !== "" && btn1.textContent==btn5.textContent && btn1.textContent==btn9.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn1.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+
+
+        //for 2 button
+        else if(btn2.textContent !== "" && btn2.textContent==btn1.textContent && btn2.textContent==btn3.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn2.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        else if(btn2.textContent !== "" && btn2.textContent==btn5.textContent && btn2.textContent==btn8.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn2.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+
+        //for 3 button
+        else if(btn3.textContent !== "" && btn3.textContent==btn1.textContent && btn3.textContent==btn2.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn3.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        else if(btn3.textContent !== "" && btn3.textContent==btn6.textContent && btn3.textContent==btn9.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn3.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        else if(btn3.textContent !== "" && btn3.textContent==btn5.textContent && btn3.textContent==btn7.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn3.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+
+        //for 4 button
+        else if(btn4.textContent !== "" && btn4.textContent==btn1.textContent && btn4.textContent==btn7.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn4.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        else if(btn4.textContent !== "" && btn4.textContent==btn6.textContent && btn4.textContent==btn5.textContent)
+        {
+        spnwin.innerHTML="Player '"+btn4.textContent+"' Win 🎉";
+        gameOver = true; 
+        }
+        if(cnt==9 && gameOver==false)
+        {
+            spnwin.innerHTML="Match Draw";
+             gameOver = true;
+        }
+  }
+</script>
+
+<script>
+  // Select all game links
+  const gameLinks = document.querySelectorAll('.content_in_opt_box a');
+
+  gameLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // stop immediate jump
+
+      // Add fade-out class to body
+      document.body.classList.add('fade-out');
+
+      // Wait for animation to complete (500ms) then redirect
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>

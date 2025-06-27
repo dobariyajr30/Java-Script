@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~Is that Odd or Even let's check~
+    <br><br>
+    Enter Number upto where you have to check: <input type="text" id="txtlim">
+    <br><br>
+    <input type="button" value="CHECK" id="txtbtn">
+    <br><br>
+    <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtlim=document.querySelector('#txtlim');
+    let txtbtn=document.querySelector('#txtbtn');
+    let spnans=document.querySelector('#spnans');
+
+    txtbtn.addEventListener("click",()=>
+    {
+        let lim=parseInt(txtlim.value);
+        let i=1;
+        let str="";
+        alert("You Enter-->"+lim);
+
+        while(i<=lim)
+        {
+            if(i%2==0)
+            {
+                str+=(i+" Even Number"+"<br/>");
+            }
+            else{
+                str+=(i+" Odd Number"+"<br/>");
+            }
+            i++;
+        }
+        spnans.innerHTML=str;
+    }
+    )
+</script>

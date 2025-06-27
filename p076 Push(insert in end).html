@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    document.writeln("Check in to the Log");
+
+    
+    //method 1
+    var ani=["dog","cat","rabit"];
+
+    ani.push('fish');
+    ani.push('sharkh');
+    ani.push('octopus');
+    
+    console.log(ani);
+
+
+    //method 2
+    let ani1=["dog","cat","cow","donkey"];
+    ani1.push('chick');
+    for (x in ani1)
+    {
+        console.log(ani1[x]);
+    }    
+    console.log(ani1)
+    
+
+    //method 3
+    const cnt=ani1.push('monkey', 'tiger', 'lion')
+    console.log(cnt)
+</script>

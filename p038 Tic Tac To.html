@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="5">
+        <tr>
+            <td><input type="button" id="btn1"></td>
+            <td><input type="button" id="btn2"></td>
+            <td><input type="button" id="btn3"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn4"></td>
+            <td><input type="button" id="btn5"></td>
+            <td><input type="button" id="btn6"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btn7"></td>
+            <td><input type="button" id="btn8"></td>
+            <td><input type="button" id="btn9"></td>
+        </tr>
+    </table>
+    Match Status: <span id="spnwin"></span>
+</body>
+</html>
+<script>
+    let btn1=document.querySelector("#btn1");
+    let btn2=document.querySelector("#btn2");
+    let btn3=document.querySelector("#btn3");
+    let btn4=document.querySelector("#btn4");
+    let btn5=document.querySelector("#btn5");
+    let btn6=document.querySelector("#btn6");
+    let btn7=document.querySelector("#btn7");
+    let btn8=document.querySelector("#btn8");
+    let btn9=document.querySelector("#btn9");
+    let bt1=0,bt2=0,bt3=0,bt4=0,bt5=0,bt6=0,bt7=0,bt8=0,bt9=0;
+    let c=1;
+    let spnwin=document.querySelector("#spnwin");
+    let tie=0;
+
+    btn1.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn1.value="O";
+        }
+        else
+        {
+            btn1.value="X";
+        }
+        c++;
+        iswinner();
+        btn1.disabled = true;
+        
+    })
+    btn2.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn2.value="O";
+        }
+        else
+        {
+            btn2.value="X";
+        }
+        c++;
+        iswinner();
+        btn2.disabled = true;  
+    })
+    btn3.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn3.value="O";
+        }
+        else
+        {
+            btn3.value="X";
+        }
+        c++;
+        iswinner();
+        btn3.disabled = true;  
+    })
+    btn4.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn4.value="O";
+        }
+        else
+        {
+            btn4.value="X";
+        }
+        c++;
+        iswinner();
+        btn4.disabled = true;  
+    })
+    btn5.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn5.value="O";
+        }
+        else
+        {
+            btn5.value="X";
+        }
+        c++;
+        iswinner();
+        btn5.disabled = true;  
+    })
+    btn6.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn6.value="O";
+        }
+        else
+        {
+            btn6.value="X";
+        }
+        c++;
+        iswinner();
+        btn6.disabled = true;  
+    })
+    btn7.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn7.value="O";
+        }
+        else
+        {
+            btn7.value="X";
+        }
+        c++;
+        iswinner();
+        btn7.disabled = true;  
+    })
+    btn8.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn8.value="O";
+        }
+        else
+        {
+            btn8.value="X";
+        }
+        c++;
+        iswinner();
+        btn8.disabled = true;  
+    })
+    btn9.addEventListener("click",()=>
+    {
+        
+        if(c%2==0)
+        {
+            btn9.value="O";
+        }
+        else
+        {
+            btn9.value="X";
+        }
+        c++;
+        iswinner();
+        btn9.disabled = true;  
+    })
+
+    function iswinner()
+    {
+        //for 1 button
+        if(btn1.value==btn2.value && btn1.value==btn3.value)
+        {
+            spnwin.innerHTML=btn1.value;
+        }
+        else if(btn1.value==btn4.value && btn1.value==btn7.value)
+        {
+            spnwin.innerHTML=btn1.value;
+        }
+        else if(btn1.value==btn5.value && btn1.value==btn9.value)
+        {
+            spnwin.innerHTML=btn1.value;
+        }
+
+        
+        //for 2 button
+        else if(btn2.value==btn1.value && btn2.value==btn3.value)
+        {
+            spnwin.innerHTML=btn2.value;
+            tie++;
+        }
+        else if(btn2.value==btn5.value && btn2.value==btn8.value)
+        {
+            spnwin.innerHTML=btn2.value;
+            tie++;
+        }
+
+        //for 3 button
+        else if(btn3.value==btn1.value && btn3.value==btn2.value)
+        {
+            spnwin.innerHTML=btn3.value;
+            tie++;
+        }
+        else if(btn3.value==btn6.value && btn3.value==btn9.value)
+        {
+            spnwin.innerHTML=btn3.value;
+            tie++;
+        }
+        else if(btn3.value==btn5.value && btn3.value==btn7.value)
+        {
+            spnwin.innerHTML=btn3.value;
+            tie++;
+        }
+
+        //for 4 button
+        else if(btn4.value==btn1.value && btn4.value==btn7.value)
+        {
+            spnwin.innerHTML=btn4.value;
+            tie++;
+        }
+        else if(btn4.value==btn6.value && btn4.value==btn5.value)
+        {
+            spnwin.innerHTML=btn4.value;
+            tie++;
+        }
+        if(c==10)
+        {
+            spnwin.innerHTML="Match Draw";
+        }
+    }
+</script>

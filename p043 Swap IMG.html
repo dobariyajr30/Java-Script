@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img1" src="img/1.jpg" style="width: 20%;"> <img id="img2" src="img/2.jpg" style="width: 20%;">
+    <br><br>
+    <input type="button" value="Swap" id="btnswp">
+    <br><br>
+</body>
+</html>
+<script>
+    let spnimg=document.querySelector("#spnimg");
+    let btnswp=document.querySelector("#btnswp");
+    let img3="";
+
+    btnswp.addEventListener("click",()=>
+    {
+        img3=img1.src;
+        img1.src=img2.src;
+        img2.src=img3;
+    }
+    )
+</script>

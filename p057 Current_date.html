@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Current Date and Time~</h1>
+    <br><br>
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>
+    Date:= <span id="spndate"></span>
+    <br>
+    Month:= <span id="spnmonth"></span>
+    <br>
+    Year:= <span id="spnyear"></span>
+    <br><br>
+    <h2>~Time is~</h2>
+    <br><br>
+    Hours:= <span id="spnhou"></span>
+    <br><br>
+    Minute:= <span id="spnmin"></span>
+    <br><br>
+    MIlli Minute:= <span id="spnmmin"></span>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let spndate=document.querySelector("#spndate");
+    let spnmonth=document.querySelector("#spnmonth");
+    let spnyear=document.querySelector("#spnyear");
+    let spnhou=document.querySelector("#spnhou");
+    let spnmin=document.querySelector("#spnmin");
+    let spnmmin=document.querySelector("#spnmmin");
+
+    let date=new Date();
+
+    btngen.addEventListener("click",()=>
+    {
+        spndate.innerHTML=date.getDay()+1;
+        spnmonth.innerHTML=date.getMonth();
+        spnyear.innerHTML=date.getFullYear();
+        spnhou.innerHTML=date.getHours();
+        spnmin.innerHTML=date.getMinutes();
+        spnmmin.innerHTML=date.getMilliseconds();
+    })
+
+   
+
+
+</script>

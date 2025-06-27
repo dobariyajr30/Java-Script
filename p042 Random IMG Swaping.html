@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img1" style="width: 20%;"> <img id="img2" style="width: 20%;">
+    <br><br>
+    <input type="button" value="Genrate" id="btn">
+    <br><br>
+    <input type="button" value="Swap" id="btnswp">  
+    <br><br>
+    <img id="swp1" style="width: 20%;"> <img id="swp2" style="width: 20%;">
+</body>
+</html>
+<script>
+    let spnimg=document.querySelector("#spnimg");
+    let btn=document.querySelector("#btn");
+    let btnswp=document.querySelector("#btnswp");
+    let c=0;
+    let img3="";
+
+    
+
+    btn.addEventListener("click",()=>
+    {
+        c=(Math.floor(Math.random()*4)+1);
+
+        if(c==1)
+        {
+            img1.src="img\\1.jpg";
+            img2.src="img\\2.jpg";
+        }
+        
+        else if(c==2)
+        {
+            img1.src="img\\2.jpg";
+            img2.src="img\\4.jpg";
+        }
+        else if(c==3)
+        {
+            img1.src="img\\3.jpg";
+            img2.src="img\\1.jpg";
+        }
+        else if(c==4)
+        {
+            img1.src="img\\4.jpg";
+            img2.src="img\\3.jpg";
+        }
+
+    })
+
+    btnswp.addEventListener("click",()=>
+    {
+        let img3=img1.src;
+        img1.src=img2.src;
+        img2.src=img3;
+    }
+    )
+</script>

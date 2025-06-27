@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <h1>Let's Genrate Random IMG of Dog</h1>
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>
+    <img src="" id="img" width="30%"> 
+    <span id="spn"></span> 
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let img=document.querySelector("#img");
+    let spn=document.querySelector("#spn");
+    const link="https://dog.ceo/api/breeds/image/random";
+
+    btngen.addEventListener("click",()=>
+    {
+        fetch(link)
+
+        .then((resp_ave_che)=>
+        {
+            if(!resp_ave_che.ok)
+            {
+                throw new Error("Faild To Fatch IMG");
+            }
+
+            return resp_ave_che.json();
+        })
+
+        .then((data_ayi_gyo)=>
+        {
+            img.src=data_ayi_gyo.message;
+        })
+
+        .catch((error)=>
+        {
+            spn.innerHTML("Failed to Fatch Link");
+        })
+    })
+</script>

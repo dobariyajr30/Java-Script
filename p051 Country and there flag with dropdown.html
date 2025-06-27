@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Image Generator~</h1>
+    <br><br>
+    <select id="opt">
+        <option>Select Your Option Here</option>
+        <option value="usa">USA</option>
+        <option value="japan">Japan</option>
+        <option value="china">China</option>
+        <option value="arg">Argentina</option>
+    </select>
+    <input type="button" value="Generat" id="btngen"> 
+    <br>
+    <img style="width: 20%;" src="" id="img1">
+</body>
+</html>
+<script>
+    let opt=document.querySelector("#opt");
+    let btngen=document.querySelector("#btngen");
+    let img1=document.querySelector("#img1");
+
+    btngen.addEventListener("click",()=>
+    {
+        if(opt.value=="usa")
+        {
+            img1.src="img/USA.png";
+        }
+        else if(opt.value=="japan")
+        {
+            img1.src="img/japan.png";
+        }
+        else if(opt.value=="china")
+        {
+            img1.src="img/china.png";
+        }
+        else if(opt.value=="arg")
+        {
+            img1.src="img/Argentina.png";
+        }
+    })
+    
+
+</script>

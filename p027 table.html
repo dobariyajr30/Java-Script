@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ~Let's Learn Table Today~
+    <br><br>
+    Enter Table: <input type="text" id="txtno">
+    <br><br>
+    <input type="button" id="txtbtn" value="Get the Answer">
+    <br><br>
+    <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtno=document.querySelector('#txtno');
+    let txtbtn=document.querySelector('#txtbtn');
+    let spnans=document.querySelector('#spnans');
+
+    txtbtn.addEventListener("click",()=>
+    {
+        let no=parseInt(txtno.value);
+        let i;
+        let str="";
+        
+        for(i=1; i<=10; i++)
+        {
+            str+=(no+"X"+i+"="+no*i +"<br/>");
+        }
+        spnans.innerHTML=str;
+    }
+    )
+</script>

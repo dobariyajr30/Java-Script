@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 150%;">
+    <h1>~Calculator~</h1>
+    <br>
+    Enter 1st Number Here:- <input type="text" id="txtno1">
+    <br><br>
+    Enter 2nd Number Here:- <input type="text" id="txtno2">
+    <br><br>
+    Addition:-<input type="radio" name="a" id="btnadd">
+    Subtraction:-<input type="radio" name="a" id="btnsub">
+    Multiplication:-<input type="radio" name="a" id="btnmul">
+    Division:-<input type="radio" name="a" id="btndiv">
+    <br><br>
+    Answer:- <span id="spnans"></span>
+</body>
+</html>
+<script>
+    let txtno1=document.querySelector("#txtno1");
+    let txtno2=document.querySelector("#txtno2");
+    let btnadd=document.querySelector("#btnadd");
+    let btnsub=document.querySelector("#btnsub");
+    let btnmul=document.querySelector("#btnmul");
+    let btndiv=document.querySelector("#btndiv");
+    let spnans=document.querySelector("#spnans");
+    let ans=0;
+
+    btnadd.addEventListener("click",()=>
+    {
+        ans=parseInt(txtno1.value)+parseInt(txtno2.value);
+        spnans.innerHTML=ans;
+    })
+    btnsub.addEventListener("click",()=>
+    {
+        ans=parseInt(txtno1.value)-parseInt(txtno2.value);
+        spnans.innerHTML=ans;
+    })
+    btnmul.addEventListener("click",()=>
+    {
+        ans=parseInt(txtno1.value)*parseInt(txtno2.value);
+        spnans.innerHTML=ans;
+    })
+    btndiv.addEventListener("click",()=>
+    {
+        ans=parseInt(txtno1.value)/parseInt(txtno2.value);
+        spnans.innerHTML=ans;
+    })
+
+</script>

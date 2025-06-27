@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        text-align: center;
+        font-size: 120%;
+    }
+
+    @font-face 
+    {
+    font-family: newfont;
+    src: url('./Digital-7.ttf');
+    }
+
+    .clock
+    {
+        margin-top: 5%;
+        background-color: rgb(205, 205, 205);
+        font-family: newfont;
+        width: 100%;
+        height: 500px;
+    
+    }
+    .timer{
+        width: 400px;
+        font-size:150%;
+    }
+</style>
+
+<body>
+    <h1>~Digital Clock~</h1>
+    <input type="button" value="START" id="btnstr">
+    <table border="5" class="clock">
+        <tr>
+            <td rowspan="3" class="timer">
+                <span id="spnhr" >00</span>:
+                <span id="spnmin">00</span>:
+                <span id="spnsec">00</span>
+                <span id="spnst">00</span> <!--for practice-->
+            </td>
+            <td><span id="spndate">00/00/0000</span>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td><span id="spnwish">good XXXX</span></td>
+        </tr>
+        <tr>
+            <td><img src="" id="img1" style="width: 30%;"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<script>
+    let btnstr=document.querySelector("#btnstr");
+    let spnhr=document.querySelector("#spnhr");
+    let spnmin=document.querySelector("#spnmin");
+    let spnst=document.querySelector("#spnst");
+    let spnsec=document.querySelector("#spnsec");
+    let spndate =document.querySelector("#spndate");
+    let spnwish=document.querySelector("#spnwish");
+
+    btnstr.addEventListener("click",()=>
+    {
+        active();
+    })
+
+    function active()
+    {
+        let date = new Date();
+
+        spnsec.innerHTML = date.getSeconds();
+        spnhr.innerHTML=date.getHours();
+        spnmin.innerHTML=date.getMinutes();
+        
+        if(spnhr.innerHTML>=12)
+        {
+            spnst.innerHTML="PM";
+        }
+        else
+        {
+            spnst.innerHTML="AM";
+        }
+
+        let hours = parseInt(spnhr.innerHTML);
+
+        if (hours>=0 && hours<12)
+        {
+            spnwish.innerHTML="Good Morning";
+            img1.src="img/God Morning.png";
+        }    
+        else if (hours>=12 && hours<18) 
+        {
+            spnwish.innerHTML="Good Afternoon";
+            img1.src="img/Good Afternoon.png";
+        } 
+        else if (hours>=18 && hours<24) 
+        {
+            spnwish.innerHTML="Good Evening";
+            img1.src="img/Good Evening.png";
+        }
+
+        spndate.innerHTML=date.toLocaleDateString(); 
+
+        setTimeout(active,1000);
+    }
+
+</script>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p045 Match The Card.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Let's Match The Card~</h1>
+    <div class="inner_img">
+        <img id="img1" src="img/Card Back.jpg">
+        <img id="img2" src="img/Card Back.jpg">
+        <img id="img3" src="img/Card Back.jpg">
+        <img id="img4" src="img/Card Back.jpg">
+        <img id="img5" src="img/Card Back.jpg">
+        <br><br>
+        <img id="img6" src="img/Card Back.jpg">
+        <img id="img7" src="img/Card Back.jpg">
+        <img id="img8" src="img/Card Back.jpg">
+        <img id="img9" src="img/Card Back.jpg"> 
+        <img id="img10" src="img/Card Back.jpg">
+    </div>
+
+    <div class="button">
+        <input type="button" value="Match" id="btnm">
+        <input type="button" value="Unmatch" id="btnum">
+    </div>
+    <div class="text">
+        Matches:= <span id="spnmatch"></span>
+        Unmtches:= <span id="spnunmatch"></span>
+    </div>
+
+</body>
+</html>
+<script>
+    let m=0;
+    let um=0;
+    
+    let btnm=document.querySelector("#btnm");   
+    let btnum=document.querySelector("#btnum");   
+    let spnmatch=document.querySelector("#spnmatch");
+    let spnunmatch=document.querySelector("#spnunmatch"); 
+
+
+    img1.addEventListener("click",()=>
+    {
+        img1.src="img\\card1.jpg"
+    }
+    )
+    img2.addEventListener("click",()=>
+    {
+        img2.src="img\\card2.jpg"
+    }
+    )
+    img3.addEventListener("click",()=>
+    {
+        img3.src="img\\card3.jpg"
+    }
+    )
+    img4.addEventListener("click",()=>
+    {
+        img4.src="img\\card4.jpg"
+    }
+    )
+    img5.addEventListener("click",()=>
+    {
+        img5.src="img\\card5.jpg"
+    }
+    )
+    //Second Row
+    img6.addEventListener("click",()=>
+    {
+        img6.src="img\\card4.jpg"
+    }
+    )
+    img7.addEventListener("click",()=>
+    {
+        img7.src="img\\card1.jpg"
+    }
+    )
+    img8.addEventListener("click",()=>
+    {
+        img8.src="img\\card5.jpg"
+    }
+    )
+    img9.addEventListener("click",()=>
+    {
+        img9.src="img\\card2.jpg"
+    }
+    )
+    img10.addEventListener("click",()=>
+    {
+        img10.src="img\\card3.jpg"
+    }
+    )
+    //match button
+    btnm.addEventListener("click",()=>
+    {
+        if(img6.src==img4.src)
+        {
+            m++;
+            spnmatch.innerHTML=m;
+            document.getElementById("img6").style.display = "none";
+            document.getElementById("img4").style.display = "none";
+
+        }
+        else if(img7.src==img1.src)
+        {
+            m++;
+            spnmatch.innerHTML=m; 
+            document.getElementById("img7").style.display = "none";
+            document.getElementById("img1").style.display = "none";
+        }
+        else if(img8.src==img5.src)
+        {
+            m++;
+            spnmatch.innerHTML=m;
+            document.getElementById("img8").style.display = "none";
+            document.getElementById("img5").style.display = "none";
+        }
+        else if(img9.src==img2.src)
+        {
+            m++;
+            spnmatch.innerHTML=m;
+            document.getElementById("img9").style.display = "none";
+            document.getElementById("img2").style.display = "none";
+        }
+        else if(img10.src==img3.src)
+        {
+            m++;
+            spnmatch.innerHTML=m;  
+            document.getElementById("img10").style.display = "none";
+            document.getElementById("img3").style.display = "none";
+        }
+
+    }
+    )
+    //unmatch button
+    btnum.addEventListener("click",()=>
+    {
+        if(img6.src!=img4.src)
+        {
+            um++;
+            spnunmatch.innerHTML=um;
+            img1.src="img/Card Back.jpg";  
+            img2.src="img/Card Back.jpg";  
+            img3.src="img/Card Back.jpg";  
+            img4.src="img/Card Back.jpg";  
+            img5.src="img/Card Back.jpg";  
+            img6.src="img/Card Back.jpg";  
+            img7.src="img/Card Back.jpg";  
+            img8.src="img/Card Back.jpg";
+            img9.src="img/Card Back.jpg";
+            img10.src="img/Card Back.jpg";
+        }
+
+        else if(img7.src!=img1.src)
+        {
+            um++;
+            spnunmatch.innerHTML=um;
+            img1.src="img/Card Back.jpg";  
+            img2.src="img/Card Back.jpg";  
+            img3.src="img/Card Back.jpg";  
+            img4.src="img/Card Back.jpg";  
+            img5.src="img/Card Back.jpg";  
+            img6.src="img/Card Back.jpg";  
+            img7.src="img/Card Back.jpg";  
+            img8.src="img/Card Back.jpg";
+            img9.src="img/Card Back.jpg";
+            img10.src="img/Card Back.jpg";
+        }
+        else if(img8.src!=img5.src)
+        {
+            um++;
+            spnunmatch.innerHTML=um;
+            img1.src="img/Card Back.jpg";  
+            img2.src="img/Card Back.jpg";  
+            img3.src="img/Card Back.jpg";  
+            img4.src="img/Card Back.jpg";  
+            img5.src="img/Card Back.jpg";  
+            img6.src="img/Card Back.jpg";  
+            img7.src="img/Card Back.jpg";  
+            img8.src="img/Card Back.jpg";
+            img9.src="img/Card Back.jpg";
+            img10.src="img/Card Back.jpg"; 
+        }
+        else if(img9.src!=img2.src)
+        {
+            um++;
+            spnunmatch.innerHTML=um;   
+            img1.src="img/Card Back.jpg";  
+            img2.src="img/Card Back.jpg";  
+            img3.src="img/Card Back.jpg";  
+            img4.src="img/Card Back.jpg";  
+            img5.src="img/Card Back.jpg";  
+            img6.src="img/Card Back.jpg";  
+            img7.src="img/Card Back.jpg";  
+            img8.src="img/Card Back.jpg";
+            img9.src="img/Card Back.jpg";
+            img10.src="img/Card Back.jpg";
+        }
+        else if(img10.src!=img3.src)
+        {
+            um++;
+            spnunmatch.innerHTML=um;
+            img1.src="img/Card Back.jpg";  
+            img2.src="img/Card Back.jpg";  
+            img3.src="img/Card Back.jpg";  
+            img4.src="img/Card Back.jpg";  
+            img5.src="img/Card Back.jpg";  
+            img6.src="img/Card Back.jpg";  
+            img7.src="img/Card Back.jpg";  
+            img8.src="img/Card Back.jpg";
+            img9.src="img/Card Back.jpg";
+            img10.src="img/Card Back.jpg";  
+        }
+
+    } 
+    
+    )
+
+</script>

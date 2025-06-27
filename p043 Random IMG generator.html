@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <h1>~Random Image Generator~</h1>
+    <br><br>
+    <input type="button" value="Generat" id="btngen">
+    <br><br>
+    <img src="" id="img1" style="width: 15%;">
+    <img src="" id="img2" style="width: 15%;">
+    <img src="" id="img3" style="width: 15%;">
+    <img src="" id="img4" style="width: 15%;">      
+    <img src="" id="img5" style="width: 15%;">
+    <br><br>
+    Enter the count of Cars:= <input type="text" id="txtcnt">
+    <br>
+    <span id="spnans"></span>
+    <br><br>
+    <input type="button" value="Submit" id="btnsub">
+    <br><br>
+    Get the Count Of cars:= <span id="spncnt"></span>
+</form>
+</body>
+</html>
+<script>
+    let btngen=document.querySelector("#btngen");
+    let img1=document.querySelector("#img1");
+    let img2=document.querySelector("#img2");
+    let img3=document.querySelector("#img3");
+    let img4=document.querySelector("#img4");
+    let img5=document.querySelector("#img5");
+    let spnch=document.querySelector("#spnch");
+    let btncnt=document.querySelector("#btncnt");
+    let spncnt=document.querySelector("#spncnt");
+    let txtcnt=document.querySelector("#txtcnt");
+    let btnsub=document.querySelector("#btnsub");
+    let spnans=document.querySelector("#spnans");
+    let c=0;
+
+    let i,random=new Array(5);
+    let arr=new Array(15);
+
+    btngen.addEventListener("click",()=>
+    {
+        random[1]=Math.floor(Math.random()*15)+1;
+        random[2]=Math.floor(Math.random()*15)+1;
+        random[3]=Math.floor(Math.random()*15)+1;
+        random[4]=Math.floor(Math.random()*15)+1;
+        random[5]=Math.floor(Math.random()*15)+1;
+
+        for(i=0; i<=15; i++)
+        {   
+            img1.src=`img/Randome/${random[1]}.jpg`;
+            img2.src=`img/Randome/${random[2]}.jpg`;
+            img3.src=`img/Randome/${random[3]}.jpg`;
+            img4.src=`img/Randome/${random[4]}.jpg`;
+            img5.src=`img/Randome/${random[5]}.jpg`;
+        }
+        c=0;
+        for (i=0; i<5; i++) 
+        {
+            if(random[i]==2 || random[i]==7 || random[i]==11 || random[i]==13)
+            {
+                c++;
+            }
+        }
+    })
+
+    btnsub.addEventListener("click",()=>
+    {
+        if(txtcnt.value==c)
+        {
+            spnans.innerHTML="Yes you are right";
+        }
+        else
+        {
+            spnans.innerHTML="No Wrong Answer";
+        }
+        spncnt.innerHTML=c;
+    })
+    
+
+</script>

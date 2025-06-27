@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~Time~</h1>
+    <br><br>
+    Hours:= <span id="spnhr"></span>
+    <br>
+    Minute:= <span id="spnmin"></span>
+    <br>
+    Status:= <span id="spnst"></span>
+    <br>
+    <input type="button" value="Genrate" id="btngen">
+    <br><br>
+    <img style="width: 20%;" src="" id="img1">
+</body>
+</html>
+<script>
+    let spnhr=document.querySelector("#spnhr");
+    let spnmin=document.querySelector("#spnmin");
+    let spnst=document.querySelector("#spnst");
+    let btngen=document.querySelector("#btngen");
+    let img1=document.querySelector("#img1");
+
+    let date=new Date();
+
+    btngen.addEventListener("click",()=>
+    {
+        spnhr.innerHTML=date.getHours();
+        spnmin.innerHTML=date.getMinutes();
+
+        if(spnhr.innerHTML>=12)
+        {
+            spnst.innerHTML="PM";
+        }
+        else
+        {
+            spnst.innerHTML="AM";
+        }
+
+        if(spnhr.innerHTML<=12 && spnhr.innerHTML<5)
+        {
+            img1.src="img/God Morning.png";
+        }
+        else if(spnhr.innerHTML>=12 && spnhr.innerHTML<18)
+        {
+            img1.src="img/God Evening.png";
+        }
+        else if(spnhr.innerHTML>=18 && spnhr.innerHTML<24)
+        {
+            img1.src="img/God Night.png";
+        }
+    })
+
+
+
+</script>

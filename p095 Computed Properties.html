@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    let fruit = prompt("Which fruit to buy?");
+    let biscuit = prompt("Which Biscuit to buy?", "parleg");
+    let biscuitPrice = prompt("Which Biscuit Price to buy?", "10");
+    let bag = {
+        [fruit]: 5,
+        [biscuit]: biscuitPrice,
+    };
+    alert(bag[fruit] + " - " + fruit);
+    alert(bag[biscuit] + " - " + biscuit);
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    let complete = true;
+    let prom = new Promise(function (resolve, reject)
+     {
+        if (complete)
+        {
+            resolve("I am happy");
+        }
+        else
+        {
+            reject("I am sad");
+        }
+    });
+    console.log(prom);
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="font-size: 200%;">
+    <h1>~Check Box~</h1>
+    <br><br>
+    Car-1: <input type="checkbox" name="" id="opt1">
+    Car-2: <input type="checkbox" name="" id="opt2">
+    Car-3: <input type="checkbox" name="" id="opt3">
+    Car-4: <input type="checkbox" name="" id="opt4">
+    <br><br>
+    <img src="" width="20%" id="img1">
+    <img src="" width="20%" id="img2">
+    <img src="" width="20%" id="img3">
+    <img src="" width="20%" id="img4">
+</body>
+
+</html>
+<script>
+    let opt1 = document.querySelector("#opt1");
+    let opt2 = document.querySelector("#opt2");
+    let opt3 = document.querySelector("#opt3");
+    let opt4 = document.querySelector("#opt4");
+    let img1 = document.querySelector("#img1");
+    let img2 = document.querySelector("#img2");
+    let img3 = document.querySelector("#img3");
+    let img4 = document.querySelector("#img4");
+
+        opt1.addEventListener("change",()=> 
+        {
+                if(opt1.checked) 
+                {
+                    img1.src="img/Randome/2.jpg";
+                } else 
+                {
+                    img1.src="";
+                    img1.style.display="none";
+                }
+        });
+
+        opt2.addEventListener("change",()=> 
+        {
+            if(opt2.checked)
+            {
+                img2.src="img/Randome/7.jpg";
+            } 
+            else 
+            {
+                img2.src="";
+                img2.style.display="none";
+            }
+        });
+
+        opt3.addEventListener("change",()=>
+        {
+            if(opt3.checked) 
+            {
+                img3.src="img/Randome/11.jpg";
+            } 
+            else 
+            {
+                img3.src="";
+                img3.style.display="none";
+            }
+        });
+
+        opt4.addEventListener("change",()=> 
+        {
+            if(opt4.checked)
+            {
+                img4.src="img/Randome/13.jpg";
+            } 
+            else 
+            {
+                img4.src="";
+                img4.style.display="none";
+            }
+        });
+</script>
